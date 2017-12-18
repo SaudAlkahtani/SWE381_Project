@@ -20,7 +20,7 @@ session_start();
     endif;
     ?>
     </p>     
-    <a href="index.php"><button class="button button-block"/>Home</button></a>
+    <a href="http://localhost:63342/test2/DiverstyShop%20front%20end.html"><button class="button button-block"/>Home</button></a>
 </div>
 </body>
 </html>
