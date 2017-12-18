@@ -16,7 +16,7 @@ if ($result->num_rows > 0) {
       echo ("<div class='col-md-3'>
         <div class='ibox'>
             <div class='ibox-content product-box'>
-            <div class='product-imitation'> <img src='".$row['img']."'alt='no img!'/> </div>
+            <div class='product-imitation'> <img src='".$row['img']."'alt='no img!' width='200px' height='200px'/> </div>
                 <div class='product-desc'>
                     <span class='product-price'> $" . $row["price"]. "</span>
                     <small class='text-muted'>the type of the item </small>

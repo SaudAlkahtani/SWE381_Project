@@ -1,3 +1,8 @@
+<?php
+require ('Show_Items_System/db.php');
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +58,7 @@
         <br>
         <br>
         <br>
-        <form class="form" action="manage_selling.php" target="_blank" method="post">
+        <form class="form" action="checkSell.php" target="_blank" method="post">
             <span>select the type of item:
             <select>
                 <option> car</option>
@@ -70,7 +75,9 @@
         <h5>Enter a discreption for the product: </h5>
         <textarea placeholder="discreption" rows="10" cols="60"></textarea>
             <p>upload an image for the product:
-                <input type= "file"/></p>
+                <input type= "file" name="Img" accept="image">
+            </p>
+
         <button type="submit" class="accordion">Send</button>
     </form>
     </div>
