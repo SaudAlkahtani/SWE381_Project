@@ -15,10 +15,7 @@
         </script>
 
     <script>
-        $(function(){
 
-            $("#includedContent3").load("");
-        });
 
 
     </script>
