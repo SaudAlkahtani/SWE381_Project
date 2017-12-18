@@ -9,7 +9,7 @@
 $host = 'localhost';
 $user = 'root';
 $pass = '';
-$db = 'items_DB';
+$db = 'dbitems';
 $conn = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
 
 

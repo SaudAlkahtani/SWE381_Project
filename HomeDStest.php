@@ -23,16 +23,18 @@
     <?php
     include_once ('slider_show.html')
     ?>
-
+  
 </div>
-
-
 <div id="includeContent4" >
+
     <?php
     include  ('Show_Items_System/showItmes.php');
     ?>
 
 </div>
+
+</div>
+
 <div id="includedContent2">
     <?php
     include_once ('footer.html');
@@ -43,4 +45,6 @@
 
 
 </body>
+
 </html>
+
