@@ -16,8 +16,8 @@
 
     <script>
         $(function(){
-            $("#includedContent2").load("footer.html");
-            $("#includedContent3").load("slider_show.html");
+
+            $("#includedContent3").load("");
         });
 
 
@@ -35,8 +35,17 @@
     include_once ('topAndSideBars.html');
     ?>
 </div>
-<div id="includedContent3"></div>
-<div id="includedContent2"></div>
+<div id="includedContent3">
+    <?php
+    include_once ('slider_show.html')
+    ?>
+    ?>
+</div>
+<div id="includedContent2">
+    <?php
+    include_once ('footer.html');
+    ?>
+</div>
 <div id="includeContent4" >
     <?php
     include  ('Show_Items_System/showItmes.php');
