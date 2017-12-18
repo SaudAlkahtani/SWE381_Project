@@ -9,16 +9,7 @@
     <link rel="stylesheet" href="show_item_styles.css">
 
 
-    <script>
 
-
-        </script>
-
-    <script>
-
-
-
-    </script>
 
 
 
