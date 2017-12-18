@@ -14,7 +14,9 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     while($row = $result->fetch_assoc()) {
 
-        if($row["id"]== (int)$id_given)
+
+        if($row["id"]== (int)$id_given) {
+
             /** @var TYPE_NAME $row */
             echo("<div class='col-md-9'>
         <section class='panel'>
@@ -46,7 +48,9 @@ if ($result->num_rows > 0) {
               </p>
           </div>
   </section>
-  </div>");
+
+  </div>");}
+
     }
 
 } else {
