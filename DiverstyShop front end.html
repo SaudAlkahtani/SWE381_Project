@@ -8,143 +8,39 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="logIn_styles.css">
+<link rel="stylesheet" href="show_item_styles.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="show_item_detail_styles.css">
+
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="jquery-3.2.1.min%20-%20Copy.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="jquery.js"></script>
+
+<head>
+  <script>
+      $(function(){
+          $("#includedContent").load("topAndSideBars.html");
+      });
+  </script>
+</head>
+
 <style>
 .w3-sidebar a {font-family: "Roboto", "sans-serif"}
 body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", "sans-serif";}
 ul,li{direction: ltr;
 }
-button.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-}
-  .item{
-    height: 50%;
-    width: 100%;
-  }
-  .container{
-    height: 50%;
-    width: 100%;
 
-  }
-  #myCarousel{
-    height: 50%;
-    width: 100%;
-  }
-button.accordion.active, button.accordion:hover {
-    background-color: #ccc;
-    color:black;
-    font-size: 20px;
-}
-
-div.panel {
-    padding: 0 5px;
-    margin: 0;
-    display: none;
-    background-color: white;
-}
 </style>
-<body class="w3-content" style="max-width:100%">
-
-<!-- Sidebar/menu -->
-
-<nav class=" w3-sidebar w3-bar-block w3-white w3-top w3-animate-left " style="z-index:3;width:200px;display:none" id="mySidebar" >
- <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
-  <div class="w3-container w3-display-container w3-padding-16">
-    <h3 class="w3-wide"><img src="https://image.ibb.co/g7Hy5w/Diversty_Shop_Home_Page_LOGO.png" height=200pt width=150pt alt ="DiverstyShop"/></h3>
-  </div>
- <div>
-  <button class="accordion" style="font-weight:bold"  >Cars</button>
-<div class= "panel" style="font-weight:bold">
-  <ul>
-  <a href="#" class="w3-bar-item w3-button" id="toy1"><li  id="toyota">TOYOTA</li></a>
-  <a href="#" class="w3-bar-item w3-button"><li>HYUNDAI</li></a>
-  <a href="#" class="w3-bar-item w3-button"><li>JEEP</li></a>
-    <a href="#" class="w3-bar-item w3-button"><li>Others</li></a>
-  </ul>
-</div>
-<button class="accordion" style="font-weight:bold;">Animals</button>
-<div class="panel" style="font-weight:bold">
-  <ul>
-  <a href="#" class="w3-bar-item w3-button"><li>Cats</li></a>
-  <a href="#" class="w3-bar-item w3-button"><li>Dogs</li></a>
-  <a href="#" class="w3-bar-item w3-button"><li>Others</li></a>
-  </ul>
-</div>
-<button class="accordion" style="font-weight:bold">Plants</button>
-<div class="panel" style="font-weight:bold">
-  <ul>
-  <a href="#" class="w3-bar-item w3-button"><li>Flowers</li></a>
-  <a href="#" class="w3-bar-item w3-button"><li>Plants</li></a>
-  <a href="#" class="w3-bar-item w3-button"><li>Pots</li></a>
-  </ul>
-</div>
-<button class="accordion" style="font-weight:bold">Furniture</button>
-
-<div class="panel" style="font-weight:bold">
-  <ul>
-  <a href="#" class="w3-bar-item w3-button"><li>Couches</li></a>
-  <a href="#" class="w3-bar-item w3-button"><li>Chairs</li></a>
-  <a href="#" class="w3-bar-item w3-button"><li>Beds</li></a>
-  </ul>
-</div>
- </div>
-  
-  
-  
-  <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a> 
-  <a href="#footer"  class="w3-bar-item w3-button w3-padding">Subscribe</a>
-</nav>
 
 
+<div id="includedContent"></div>
 
-<!-- Top menu on small screens and larg screen -->
-<header class="w3-bar w3-top  w3-black  " style="margin-left: 0pt;text-align: center;z-index: 2">
-  <div class="w3-bar-item w3-padding-24 "><img src="https://image.ibb.co/bTn03G/Diversty_Shop_Home_Page_LOGOSmale_Screen.png" height=100pt width=80pt alt="DiverstyShop"/></div>
-  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
- 
- <!-- search and cart button and text bar-->
-  <br>
-  <div class="w3-right" style="float: right; margin-right: 10pt;">
-<button type="button" class="btn .btn-default w3-gray" ><i class="fa fa-shopping-cart w3-margin-right " ></i></button>
-  <div class="btn-group " >
-    <input style="background-color: lightgray;color: black;" type="text" class="btn .btn-default w3-lightGray " value="" placeholder = "Enter here.." >
-    <button type="submit" class="btn .btn-default w3-gray"><i class="fa fa-search"></i></button>
-  </div>
-  </div>
 <br>
-  <br>
-
- <div class="w3-right" style="padding-right: 52px;padding-left: 2px"><button id="Login" type="button" style="width: 90px;color: black;" class="btn">Login</button></div>
-  <div class="w3-right"><button id="Register" type="button" style="width: 100px;color: black" class="btn">Register</button></div>
-
-</header>
-
-<!-- Overlay (effect when opening sidebar) on small screens and larg screen-->
-<div class="w3-overlay w3-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left: 0pt;margin-right: 0pt;"></div>
-
-  <!-- Push down content on small screens -->
-  <div class="w3-large" style="margin-top:85px"></div>
-  
-  <!-- Top header -->
-  
-<!-- search and cart button and text bar-->
- 
-
+<br>
+<br>
 <br>
 <br>
 <br>
@@ -193,73 +89,17 @@ div.panel {
   <div class="w3-display-container w3-container">
     <!--<img src="/w3images/jeans.jpg" alt="Jeans" style="width:100%">-->
     <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
-      
+
       <!--<p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a></p>-->
     </div>
   </div>
 
-  <div class="w3-container w3-text-grey" id="jeans">
-    
-  </div>
-
   <!-- Product grid -->
-  <div class="w3-row w3-grayscale" >
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <img src="/w3images/jeans1.jpg" style="width:100%">
-        <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
-      </div>
-      <div class="w3-container">
-        <img src="/w3images/jeans2.jpg" style="width:100%">
-        <p>Mega Ripped Jeans<br><b>$19.99</b></p>
-      </div>
-    </div>
 
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="/w3images/jeans2.jpg" style="width:100%">
-          <!--<span class="w3-tag w3-display-topleft">New</span>-->
-          <div class="w3-display-middle w3-display-hover">
-            <!--<button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>-->
-          </div>
-        </div>
-        <p>Mega Ripped Jeans<br><b>$19.99</b></p>
-      </div>
-      <div class="w3-container">
-        <img src="/w3images/jeans3.jpg" style="width:100%">
-        <p>Washed Skinny Jeans<br><b>$20.50</b></p>
-      </div>
-    </div>
+<?php
+  include '/Users/YYUU6699/PhpstormProjects/test2/Show_Items_System/showItmes.php';
+?>
 
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <img src="/w3images/jeans3.jpg" style="width:100%">
-        <p>Washed Skinny Jeans<br><b>$20.50</b></p>
-      </div>
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="/w3images/jeans4.jpg" style="width:100%">
-          <!--<span class="w3-tag w3-display-topleft">Sale</span>-->
-          <div class="w3-display-middle w3-display-hover">
-            <!--<button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>-->
-          </div>
-        </div>
-        <p>Vintage Skinny Jeans<br><b class="w3-text-red">$14.99</b></p>
-      </div>
-    </div>
-
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <img src="/w3images/jeans4.jpg" style="width:100%">
-        <p>Vintage Skinny Jeans<br><b>$14.99</b></p>
-      </div>
-      <div class="w3-container">
-        <img src="/w3images/jeans1.jpg" style="width:100%">
-        <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
-      </div>
-    </div>
-  </div>
 
   <!-- Subscribe section -->
   <div class="w3-container w3-black w3-padding-32" >
@@ -269,101 +109,13 @@ div.panel {
     <button type="button" class="w3-button w3-red w3-margin-bottom">Subscribe</button>
   </div>
   
-  <!-- Footer -->
-  <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer" >
-    <div class="w3-row-padding">
-      <div class="w3-col s4">
-        <h4>Contact</h4>
-        <p>Questions? Go ahead.</p>
-        <form action="/action_page.php" target="_blank">
-          <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
-          <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
-          <p><input class="w3-input w3-border" type="text" placeholder="Subject" name="Subject" required></p>
-          <p><input class="w3-input w3-border" type="text" placeholder="Message" name="Message" required></p>
-          <button type="submit" class="w3-button w3-block w3-black">Send</button>
-        </form>
-      </div>
-
-      <div class="w3-col s4">
-        <h4>About</h4>
-        <p><a href="#">About us</a></p>
-        <p><a href="#">We're hiring</a></p>
-        <p><a href="#">Support</a></p>
-        <p><a href="#">Find store</a></p>
-        <p><a href="#">Shipment</a></p>
-        <p><a href="#">Payment</a></p>
-        <p><a href="#">Gift card</a></p>
-        <p><a href="#">Return</a></p>
-        <p><a href="#">Help</a></p>
-      </div>
-
-      <div class="w3-col s4 w3-justify">
-        <h4>Store</h4>
-        <p><i class="fa fa-fw fa-map-marker"></i> Company Name</p>
-        <p><i class="fa fa-fw fa-phone"></i> 0044123123</p>
-        <p><i class="fa fa-fw fa-envelope"></i> ex@mail.com</p>
-        <h4>We accept</h4>
-        <p><i class="fa fa-fw fa-cc-amex"></i> Amex</p>
-        <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
-        <br>
-        <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
-        <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
-        <i class="fa fa-snapchat w3-hover-opacity w3-large"></i>
-        <i class="fa fa-pinterest-p w3-hover-opacity w3-large"></i>
-        <i class="fa fa-twitter w3-hover-opacity w3-large"></i>
-        <i class="fa fa-linkedin w3-hover-opacity w3-large"></i>
-      </div>
-    </div>
-  </footer>
-
-  <div class="w3-black w3-center w3-padding-24">Powered by <a href="#" title="ksu" target="_blank" class="w3-hover-opacity">KSU students</a></div>
 
   <!-- End page content -->
-</div>
-
-
-
-<script>
-  function w3_open() {
-   
-    document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("myOverlay").style.display = "block";
-    
-}
- 
-function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("myOverlay").style.display = "none";
-}
-
-  $(function () {
-     $("#toy1").find("#toyota").click(function (){
-         $("header1").text("hu");
-     }) ;
-  });
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-    acc[i].onclick = function(){
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            
-            panel.style.display = "none";
-        } else {
-          
-            panel.style.display = "block";
-            
-        }
-    }
-}
 
 
 
 
 
-</script>
 
 </body>
 </html>
