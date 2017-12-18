@@ -9,22 +9,6 @@
     <link rel="stylesheet" href="show_item_styles.css">
 
 
-    <script>
-
-
-        </script>
-
-    <script>
-        $(function(){
-
-            $("#includedContent3").load("");
-        });
-
-
-    </script>
-
-
-
 </head>
 
 
@@ -39,20 +23,21 @@
     <?php
     include_once ('slider_show.html')
     ?>
-    ?>
+
 </div>
-<div id="includedContent2">
-    <?php
-    include_once ('footer.html');
-    ?>
-</div>
+
+
 <div id="includeContent4" >
     <?php
     include  ('Show_Items_System/showItmes.php');
     ?>
 
 </div>
-
+<div id="includedContent2">
+    <?php
+    include_once ('footer.html');
+    ?>
+</div>
 
 
 
