@@ -11,12 +11,14 @@ $sql ='SELECT * FROM items ';
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
-    echo  (" <div class='container'> <div class='row'>");
+    echo  (" <div class='container' style='height:400px'> <div class='row' style='height:400px'> ");
     while($row = $result->fetch_assoc()) {
       echo ("<div class='col-md-3'>
         <div class='ibox'>
-            <div class='ibox-content product-box'>
-            <div class='product-imitation'> <img src='".$row['img']."'alt='no img!'/> </div>
+            <div class='ibox-content product-box''><img src='".$row['img']."'alt='no img!' width='200px' height='200px'/>
+
+            <div class='product-imitation' >  </div>
+
                 <div class='product-desc'>
                     <span class='product-price'> $" . $row["price"]. "</span>
                     <small class='text-muted'>the type of the item </small>
@@ -25,12 +27,15 @@ if ($result->num_rows > 0) {
                     <div class='small m-t-xs'>Discription</div>
                     <div class='m-t text-righ'>
 
-                        <a href='#' class='btn btn-xs btn-outline btn-primary'>add to Cart <i class='fa fa-long-arrow-right'></i> </a>
+                        
                     </div>
                 </div>
             </div>
         </div>
-    </div>");
+
+    </div>
+    ");
+
 
     }
     echo "</div> </div>";
