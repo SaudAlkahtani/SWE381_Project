@@ -1,5 +1,5 @@
 <?php
-require ('Show_Items_System/db.php');
+require ('../Show_Items_System/db.php');
 
 ?>
 
@@ -28,7 +28,7 @@ require ('Show_Items_System/db.php');
             text-align:center;
             font-size:20px;
             padding:20px 0;
-            font-family: "Roboto";
+            font-family: ."Roboto";
         }
         .footer {
             background: black;
@@ -37,7 +37,7 @@ require ('Show_Items_System/db.php');
             text-align:center;
             font-size:20px;
             padding:20px 0;
-            font-family: "Roboto";
+            font-family: ."Roboto";
         }
         .form {
             background: black;
@@ -46,7 +46,7 @@ require ('Show_Items_System/db.php');
             text-align:center;
             font-size:20px;
             padding:20px 0;
-            font-family: "Roboto";
+            font-family: ."Roboto";
             margin-right: 25%;
             margin-left: 25%;
         }

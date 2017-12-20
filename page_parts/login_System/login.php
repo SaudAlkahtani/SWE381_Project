@@ -20,7 +20,7 @@ else { // User exists
         $_SESSION['active'] = $user['active'];
         
         // This is how we'll know the user is logged in
-        $_SESSION['logged_in'] = true;
+        $_SESSION['logged_in'] = 1;
 
 
         header("location: homeDSTest.php?welcome=true");

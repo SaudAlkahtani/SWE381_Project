@@ -1,18 +1,20 @@
 
 .product-box {
     padding: 0;
-    border: 1px solid #e7eaec;
+    border: 0px solid #e7eaec;
+
 }
 .product-box:hover,
 .product-box.active {
-    border: 1px solid transparent;
-    -webkit-box-shadow: 0 3px 7px 0 #a8a8a8;
-    -moz-box-shadow: 0 3px 7px 0 #a8a8a8;
-    box-shadow: 0 3px 7px 0 #a8a8a8;
+    z-index: 2;
+    border: 0px solid ;
+    -webkit-box-shadow: 1px 1px #a8a8a8;
+    -moz-box-shadow: 0 0px 0px 0 #a8a8a8;
+    box-shadow: 0 0px 0px 0 #a8a8a8;
 }
 .product-imitation {
     text-align: center;
-    padding: 90px 0;
+    padding: 5px 5px;
     background-color: #f8f8f9;
     color: #bebec3;
     font-weight: 600;
@@ -25,7 +27,8 @@
     background-color: #f8f8f9;
 }
 .product-imitation.xl {
-    padding: 120px 0;
+    text-align: center;
+
 }
 .product-desc {
     padding: 20px;
@@ -33,6 +36,8 @@
 }
 .ecommerce .tag-list {
     padding: 0;
+    width: 250px ;
+    height: 500px;
 }
 .ecommerce .fa-star {
     color: #d1dade;
@@ -59,7 +64,9 @@ table.shoping-cart-table tr td:last-child {
 }
 .product-name {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 100;
+    height: 100px;
+    width: 200px;
     color: #676a6c;
     display: block;
     margin: 2px 0 5px 0;
@@ -84,7 +91,7 @@ table.shoping-cart-table tr td:last-child {
 .image-imitation {
     background-color: #f8f8f9;
     text-align: center;
-    padding: 200px 0;
+    padding: 0px 0;
 }
 .product-main-price small {
     font-size: 10px;
@@ -94,7 +101,7 @@ table.shoping-cart-table tr td:last-child {
 }
 
 .ibox {
-    clear: both;
+    clear: bottom;
     margin-bottom: 25px;
     margin-top: 0;
     padding: 0;
@@ -125,7 +132,7 @@ table.shoping-cart-table tr td:last-child {
     color: inherit;
     margin-bottom: 0;
     padding: 14px 15px 7px;
-    min-height: 48px;
+    min-height: 50px;
 }
 .ibox-content {
     background-color: #ffffff;
@@ -139,7 +146,7 @@ table.shoping-cart-table tr td:last-child {
 .ibox-footer {
     color: inherit;
     border-top: 1px solid #e7eaec;
-    font-size: 90%;
+    font-size: 50%;
     background: #ffffff;
     padding: 10px 15px;
 }
