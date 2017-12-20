@@ -58,7 +58,7 @@ require ('Show_Items_System/db.php');
         <br>
         <br>
         <br>
-        <form class="form" action="checkSell.php" target="_blank" method="post">
+        <form class="form" action="checkSell.php" target="_blank" method="post" enctype="multipart/form-data">
             <span>select the type of item:
             <select>
                 <option> car</option>
@@ -74,11 +74,12 @@ require ('Show_Items_System/db.php');
         <p><input type="text" placeholder="Amount" name="Amount" required></p>
         <h5>Enter a discreption for the product: </h5>
         <textarea placeholder="discreption" rows="10" cols="60"></textarea>
+
             <p>upload an image for the product:
-                <input type= "file" name="Img" accept="image">
+                <input type= "file" name="image" accept="image">
             </p>
 
-        <button type="submit" class="accordion">Send</button>
+        <button type="submit" class="accordion" name="upload">Send</button>
     </form>
     </div>
 <div class = "footer">
