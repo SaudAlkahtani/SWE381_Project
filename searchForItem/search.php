@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-$conn =mysqli_connect("localhost", "root", "","search");
+$conn =mysqli_connect("localhost", "root", "","dbitems");
 
 /*
     localhost - it's location of the mysql server, usually localhost
@@ -16,7 +16,7 @@ $conn =mysqli_connect("localhost", "root", "","search");
     if connection fails it will stop loading the page and display an error
 */
 
-mysqli_select_db($conn,"search") or die(mysqli_error());
+mysqli_select_db($conn,"dbitems") or die(mysqli_error());
 /* tutorial_search is the name of database we've created */
 
 
@@ -37,8 +37,8 @@ if(strlen($query) >= $min_length){ // if query length is more or equal minimum l
     $query = mysqli_real_escape_string($conn,$query);
     // makes sure nobody uses SQL injection
 
-    $raw_results = mysqli_query($conn,"SELECT * FROM articles
-            WHERE (`title` LIKE '%".$query."%') OR (`text` LIKE '%".$query."%')") or die(mysqli_error($conn));
+    $raw_results = mysqli_query($conn,"SELECT * FROM items
+            WHERE (`name` LIKE '%".$query."%') OR (`id` LIKE '%".$query."%')") or die(mysqli_error($conn));
 
     // * means that it selects all fields, you can also write: `id`, `title`, `text`
     // articles is the name of our table
@@ -52,7 +52,7 @@ if(strlen($query) >= $min_length){ // if query length is more or equal minimum l
         while($results = mysqli_fetch_array($raw_results)){
             // $results = mysql_fetch_array($raw_results) puts data from database into array, while it's valid it does the loop
 
-            echo "<p><h3>".$results['title']."</h3>".$results['text']."</p>";
+            echo "<p><h3>".$results['name']."</h3> <img src='".$results['img']."'></p>";
             // posts results gotten from database(title and text) you can also show id ($results['id'])
         }
 
