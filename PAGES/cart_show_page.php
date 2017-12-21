@@ -1,3 +1,9 @@
+<?php
+session_start();
+if($_SESSION['logged_in'] != 1){
+     header("location: HomeDStest.php");
+}
+    ?>
 <!DOCTYPE html>
 <html >
 <title>cart_show_page</title>
@@ -12,7 +18,7 @@
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="../Styles_files/cart_Styles.css" rel="stylesheet">
+    <link href="../Styles_files/profile_styles.css" rel="stylesheet">
 
 
 </head>

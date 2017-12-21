@@ -7,7 +7,8 @@ session_start();
 
 
 //VVVV just to test the profile button [yyuu6699]
-$_SESSION['logged_in'] = 1;
+if($_SESSION['logged_in'] == null)
+    $_SESSION['logged_in']=0;
 //until here [yyuu6699]
 
 
@@ -15,7 +16,6 @@ $message;
 if ( $_SESSION['logged_in'] != 1 ) {
     $message= "You must log in before viewing your profile page!";
     //header("location: error.php");
-
 }
 else {
     // Makes it easier to read
