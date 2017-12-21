@@ -6,9 +6,10 @@
 </head>
 <body>
 
-<form target="view.php" method="get">
+<form action="view.php" method="get">
 
-    <input type="button" name="id" value="1">test
+    <input type="text" name="id" value="">View image of id </input>
+
 
 </form>
 

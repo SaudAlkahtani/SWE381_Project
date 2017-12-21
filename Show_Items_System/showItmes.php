@@ -17,7 +17,7 @@ if ($result->num_rows > 0) {
         <div class='ibox'>
             <div class='ibox-content product-box'>
 
-            <div class='product-imitation'> <img src='".$row['img']."'alt='no img!' width='200px' height='200px'/> </div>
+            <div class='product-imitation'> <img src='data:image/jpeg;base64," . base64_encode( $row['img'] )."'/> </div>
 
                 <div class='product-desc'>
                     <span class='product-price'> $" . $row["price"]. "</span>

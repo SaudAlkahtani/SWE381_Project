@@ -15,14 +15,17 @@ if(!empty($_GET['id'])){
     }
 
     //Get image data from database
-    $result = $db->query("SELECT img FROM dbitems WHERE id = {$_GET['id']}");
+    $result = $db->query("SELECT img FROM items WHERE id = {$_GET['id']}");
 
     if($result->num_rows > 0){
         $imgData = $result->fetch_assoc();
 
         //Render image
-        header("Content-type: image/jpg");
-        echo $imgData['image'];
+       // header("Content-type: image/jpg");
+       // echo 'hello world';
+        echo '<img src="data:image/jpeg;base64,' . base64_encode( $imgData['img'] ) . '" />';
+
+        //echo $imgData['img'];
     }else{
         echo 'Image not found...';
     }
