@@ -29,7 +29,7 @@
 <br><br><br><br><br><br><br><br><br>
 <div class="w3-border ">
     <?php
-    include  ('../page_parts/Show_Items_System/show_cart.php');
+    include('../page_parts/Show_Items_System/show_my_profile.php');
     ?>
 </div>
 
