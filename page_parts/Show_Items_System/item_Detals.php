@@ -5,11 +5,10 @@
  * Date: 12/17/2017 AD
  * Time: 9:36 PM
  */
-require '../../DataBases_DS/DSDB.php';
+require 'db.php';
 $id_given = 2;// make it correct (***********)
-
 $sql ="SELECT * FROM items ";
-$result = $mysqli->query($sql);
+$result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     $row = $result->fetch_assoc();

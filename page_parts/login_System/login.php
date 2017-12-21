@@ -23,10 +23,11 @@ else { // User exists
         $_SESSION['logged_in'] = 1;
 
 
-        header("location: ../../PAGES/HomeDStest.php");
+        header("location: ../../PAGES/HomeDStest.php?welcome=true");
 
     }
     else {
+        $_SESSION['logged_in']=0;
         $_SESSION['message'] = "You have entered wrong password, try again!";
         header("location: error.php");
     }
