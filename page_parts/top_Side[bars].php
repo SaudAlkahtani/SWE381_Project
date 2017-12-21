@@ -115,6 +115,8 @@
 
         <button type="button" class="btn .btn-default w3-gray" ><a href="../PAGES/cart_show_page.php"><i class="fa fa-shopping-cart w3-margin-right " ></i></a></button>
         <div class="btn-group " >
+
+
             <input style="background-color: lightgray;color: black;" type="text" class="btn .btn-default w3-lightGray " value="" placeholder = "Enter here.." >
             <input type="button" class="btn .btn-default w3-gray" value="GO"></input></div>
 
