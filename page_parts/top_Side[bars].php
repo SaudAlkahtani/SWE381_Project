@@ -115,10 +115,10 @@
 
         <div class="btn-group " >
 
-
-            <input style="background-color: lightgray;color: black;" type="text" class="btn .btn-default w3-lightGray " value="" placeholder = "Enter here.." >
-            <input type="button" class="btn .btn-default w3-gray" value="GO"></input></div>
-
+            <form action="../page_parts/Show_Items_System/search_for_item.php" method="GET">
+            <input style="background-color: lightgray;color: black;" type="text" name="query" class="btn .btn-default w3-lightGray " value="" placeholder = "Enter here.." >
+            <input type="submit" class="btn .btn-default w3-gray" value="GO"></input></div>
+            </form>
     </div>
     <br>
     <br>

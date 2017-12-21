@@ -15,7 +15,6 @@ $message;
 if ( $_SESSION['logged_in'] != 1 ) {
     $message= "You must log in before viewing your profile page!";
     //header("location: error.php");
-
 }
 else {
     // Makes it easier to read

@@ -5,7 +5,7 @@
  * Date: 12/17/2017 AD
  * Time: 9:33 PM
  */
-require '../../DataBases_DS/DSDB.php';
+require 'DSDB.php';
 
 $sql ='SELECT * FROM items ';
 $result = $mysqli->query($sql);
@@ -43,4 +43,3 @@ if ($result->num_rows > 0) {
     echo "0 results";
 }
 $mysqli->close();
-?>
