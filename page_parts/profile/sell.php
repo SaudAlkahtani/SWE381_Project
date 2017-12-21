@@ -1,5 +1,5 @@
 <?php
-require ('../../DataBases_DS/DSDB.php');
+require ('../Show_Items_System/db.php');
 
 ?>
 

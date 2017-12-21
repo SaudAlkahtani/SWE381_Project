@@ -5,10 +5,10 @@
  * Date: 12/17/2017 AD
  * Time: 9:33 PM
  */
-require '../../DataBases_DS/DSDB.php';
+require 'db.php';
 
 $sql ='SELECT * FROM items ';
-$result = $mysqli->query($sql);
+$result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     echo  (" <div class='container' style='height:400px'> <div class='row' style='height:400px'> ");
@@ -42,5 +42,5 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
-$mysqli->close();
+$conn->close();
 ?>

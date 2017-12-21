@@ -1,6 +1,6 @@
 <?php
 /* Main page with two forms: sign up and log in */
-require '../../DataBases_DS/DSDB.php';
+require 'db.php';
 session_start();
 ?>
 <!DOCTYPE html>
