@@ -7,7 +7,7 @@ session_start();
 
 
 //VVVV just to test the profile button [yyuu6699]
-$_SESSION['logged_in'] = 1;
+
 //until here [yyuu6699]
 
 

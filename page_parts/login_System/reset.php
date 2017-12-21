@@ -2,7 +2,7 @@
 /* The password reset form, the link to this page is included
    from the forgot.php email message
 */
-require 'db.php';
+require '../../DataBases_DS/DSDB.php';
 session_start();
 
 // Make sure email and hash variables aren't empty
