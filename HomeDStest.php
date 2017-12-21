@@ -1,13 +1,4 @@
-<?php
-session_start();
-$message;
-if ( $_SESSION['logged_in'] != 1 ) {
-    $message="You are not logged in";
 
-}else {
-   $message="you are logged in!";
-}
-?>
 <!DOCTYPE html>
 <html >
 <title>Home_DS_page</title>

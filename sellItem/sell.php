@@ -1,5 +1,5 @@
 <?php
-require ('Show_Items_System/db.php');
+require('Show_Items_System/db.php');
 
 ?>
 
@@ -60,19 +60,19 @@ require ('Show_Items_System/db.php');
         <br>
         <form class="form" action="checkSell.php" target="_blank" method="post" enctype="multipart/form-data">
             <span>select the type of item:
-            <select>
-                <option> car</option>
-                <option> furniture</option>
-                <option> animals</option>
-                <option> plants</option>
-                <option> other</option>
+            <select name="types">
+                <option value="Car"> Car</option>
+                <option value="Furniture"> Furniture</option>
+                <option value="Animals"> Animals</option>
+                <option value="Plants"> Plants</option>
+
             </select>
             </span>
             <br>
         <p><input type="text" placeholder="Name" name="Name" required></p>
         <p><input type="text" placeholder="Price" name="Price" required></p>
         <p><input type="text" placeholder="Amount" name="Amount" required></p>
-        <h5>Enter a discreption for the product: </h5>
+        <h5>Enter a description for the product: </h5>
         <textarea placeholder="discreption" rows="10" cols="60"></textarea>
 
             <p>upload an image for the product:

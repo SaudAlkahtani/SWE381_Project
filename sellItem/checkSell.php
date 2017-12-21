@@ -5,7 +5,7 @@
  * Date: 12/18/2017
  * Time: 5:31 PM
  */
-require ('Show_Items_System/db.php');
+require('Show_Items_System/db.php');
 if($conn->connect_error){
     die("Connection failed: " . $conn->connect_error);
 }
@@ -17,8 +17,11 @@ if(isset($_POST["upload"])){
         $imgContent = addslashes(file_get_contents($image));
 
 
-        $name = $_POST['Name'];
+        $name = addslashes($_POST['Name']);
         $price = $_POST['Price'];
+        $type = $_POST['types'];
+
+
         //Insert image content into database
         //$insert = $db->query("INSERT into items (image, created) VALUES ('$imgContent', '$dataTime')");
         $sql = "INSERT INTO items (name, price, img)
