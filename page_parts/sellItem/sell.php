@@ -58,7 +58,7 @@ require('../Show_Items_System/db.php');
         <br>
         <br>
         <br>
-        <form class="form" action="checkSell.php" target="_blank" method="post" enctype="multipart/form-data">
+        <form class="form" action="../Show_Items_System/checkSell.php" target="_blank" method="post" enctype="multipart/form-data">
             <span>select the type of item:
             <select name="types">
                 <option value="Car"> Car</option>
