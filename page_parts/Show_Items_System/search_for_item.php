@@ -59,6 +59,7 @@ if(strlen($query) >= $min_length){ // if query length is more or equal minimum l
     }
     else{ // if there is no matching rows do following
         echo "No results";
+
     }
 
 }

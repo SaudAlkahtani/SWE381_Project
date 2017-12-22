@@ -130,19 +130,29 @@
 
 
     <?php
+    require '../DataBases_DS/db.php';
+    $isThereNinifcation = false;
     $loginOrNot = $_SESSION['logged_in'];
-
+    if($loginOrNot == 1) {
+        $hs = $_SESSION['history'];
+        if ($hs != NULL) {
+            $sql = "SELECT * FROM items WHERE (`name` LIKE '%" . $hs . "%')";
+            $result = mysqli_query($conn, $sql);
+            $isThereNinifcation = mysqli_num_rows($result)>0?true:false;
+        }
+    }
     if( (int)$loginOrNot != 1){
         echo ("<div class='w3-right' id='loginButtonDiv' style='padding-right:10px;padding-left: 2px' ><a href='../page_parts/login_System/index.php'><button id='Login' type='button'   style='width: 90px;color: black;' class='btn fa fa-sign-in' ></button></a></div>");
     }
     if( (int)$loginOrNot == 1) {
-        echo("<div class='w3-right' id='loginButtonDiv'  style='padding-right:10px;padding-left: 2px'><a href='../PAGES/cart_show_page.php'><button id='Login' type='button'   style='width: 90px;color: black;' class='btn fa fa-user' ></button></a></div>");
-    }
-    if((int)$loginOrNot == 1) {
-            echo("<div class='w3-right' id='loginButtonDiv'  style='padding-right:10px;padding-left: 2px'><a href='../PAGES/interests.php'><button id='Login' type='button'    style='width: 90px;color: black;' class='btn' ><i class='fa fa-envelope' aria-hidden='true' '></i></button></a></div>");
-    }
-    if((int)$loginOrNot == 1) {
-        echo ("<div  class='w3-right' style='padding-right:10px;padding-left: 2px'><a href='.././page_parts/login_System/logout.php'><button id='home' type='button'   style='width: 90px;color: black;' class='btn' >Logout</button></a></div>");
+        echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px'><a href='../PAGES/cart_show_page.php'><button id='Login' type='button'  style='width: 90px;color: black;' class='btn fa fa-user' ></button></a></div>");
+        if($isThereNinifcation) {
+            echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px;'><a href='../PAGES/interests.php'><button id='interests' type='button' style='width: 90px;color: black;' class='btn-success' ><i class='fa fa-envelope' aria-hidden='true' '></i></button></a></div> ");
+
+        } else {
+            echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px;'><a href='../PAGES/interests.php'><button id='interests' type='button' style='width: 90px;color: black;' class='btn' ><i class='fa fa-envelope' aria-hidden='true' '></i></button></a></div>");
+        }
+        echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px'><a href='.././page_parts/login_System/logout.php'><button id='home' type='button'   style='width: 90px;color: black;' class='btn' >Logout</button></a></div>");
     }
     ?>
     </div>

@@ -1,3 +1,10 @@
+
+<?php
+session_start();
+require '.././page_parts/login_System/db.php';
+
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -59,8 +66,20 @@ if(strlen($query) >= $min_length){ // if query length is more or equal minimum l
     }
     else{ // if there is no matching rows do following
         echo "No results";
+
+    $sql ='SELECT * FROM user ';
+
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+    if($_SESSION['email'] == $row['email']){
+        $row['history'] = $query;
+    }
+    }
     }
 
+}
 }
 else{ // if query length is less than minimum
     echo "Minimum length is ".$min_length;
