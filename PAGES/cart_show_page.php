@@ -35,7 +35,7 @@ if($_SESSION['logged_in'] != 1){
 <br><br><br><br><br><br><br><br><br>
 <div class="w3-border ">
     <?php
-    include  ('../page_parts/Show_Items_System/show_cart.php');
+    include  ('show_items_index.php');
     ?>
 </div>
 

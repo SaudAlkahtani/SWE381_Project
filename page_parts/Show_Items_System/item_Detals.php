@@ -6,7 +6,8 @@
  * Time: 9:36 PM
  */
 require 'db.php';
-$id_given = 2;// make it correct (***********)
+$id_given = $_SESSION['DID'];// make it correct (***********)
+
 $sql ="SELECT * FROM items ";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
@@ -15,7 +16,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 
 
-        if($row["id"]== (int)$id_given) {
+        if($row["id"]== $id_given) {
 
             /** @var TYPE_NAME $row */
             echo("<div class='col-md-9'>

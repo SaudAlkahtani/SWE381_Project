@@ -17,11 +17,13 @@ session_start();
         echo $_SESSION['message'];    
     else:
 
-        header( "location: login_system/index.php" );
+        header("location: ../../PAGES/HomeDStest.php" );
     endif;
     ?>
-    </p>     
-    <a href="index.php"><button class="button button-block"/>Home</button></a>
+    </p>
+    <a href="index.php"><button class="button button-block"/>try again</button></a>
+    <br>
+    <a href="../../PAGES/HomeDStest.php"><button class="button button-block"/>Home</button></a>
 
 </div>
 </body>

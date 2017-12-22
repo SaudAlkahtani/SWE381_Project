@@ -15,8 +15,8 @@ if ($result->num_rows > 0) {
 
     echo ("
 
-<div class='container w3-center' style='text-align: center >
-    <div class='wrapper wrapper-content animated fadeInRight'>
+<div class='container w3-center' style='text-align: center' >
+    <div class='wrapper wrapper-content animated fadeInRight' >
         <div class='row'>
             <div class='col-md-9' '>
                 <div class='ibox'>
@@ -48,8 +48,9 @@ if ($result->num_rows > 0) {
                                             </p>
 
                                             <div class='m-t-sm'>
-                                                <a href='#' class='text-muted'><i class='fa fa-trash'></i> Remove
-                                                    item</a>
+                                               
+                                                <a href='#' class='text-muted'><i class='fa fa-trash'></i> Remove item</a>
+
                                             </div>
                                         </td>
 
@@ -86,11 +87,21 @@ if ($result->num_rows > 0) {
             </div>
         </div>
     </div>
-</div> <br><br><br>");
+</div> <br>
+<a href='#' class='text-muted'><i class='fa fa-trash'></i> Add item</a>
+
+<br><br>
+");
 
 }else {
     echo "0 results";
+
 }
+
+
+
+
+
 $conn->close();
 
 ?>
