@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
                     <div class='small m-t-xs'>Description</div>
                     <div class='m-t text-righ'>
 
-                        <a href='#' class='btn btn-xs btn-outline btn-primary'>add to Cart <i class='fa fa-long-arrow-right'></i> </a>
+                       
                     </div>
                 </div>
             </div>
