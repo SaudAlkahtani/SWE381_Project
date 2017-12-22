@@ -69,7 +69,7 @@ require ('db.php')
 							<small>Product by ".$SellerName."</small>
 
 						</h2>
-						<hr>
+						<br><hr>
 						<h3 class=\"price-container\">
 							".$row['price']."
 							<!--<small>*includes tax</small>-->
@@ -79,31 +79,44 @@ require ('db.php')
 								<!--<li><a href=\"javascript:void(0);\">Delivery time<span>7 Working Days</span></a></li>-->
 								<!--<li><a href=\"javascript:void(0);\">Certified<span>Quality Assured</span></a></li>-->
 							<!--</ul>-->
-						</div>
-						<hr>
+						
+						
+						<!--</div>>
 						<div class=\"description description-tabs\">
 							<ul id=\"myTab\" class=\"nav nav-pills\">
 								<li class=\"active\"><a href=\"#more-information\" data-toggle=\"tab\" class=\"no-margin\">Product Description </a></li>
 								<!--<li class=\"\"><a href=\"#specifications\" data-toggle=\"tab\">Specifications</a></li>-->
 								<!--<li class=\"\"><a href=\"#reviews\" data-toggle=\"tab\">Reviews</a></li>-->
-							</ul>
-							<div id=\"myTabContent\" class=\"tab-content\">
-								<div class=\"tab-pane fade active in\" id=\"more-information\">
-									<br>
+							<!--</ul>
+							<!--<div id=\"myTabContent\" class=\"tab-content\">
+							<!--	<div class=\"tab-pane fade active in\" id=\"more-information\">
+								<!--	<br>
 
-									<p>".$row['description']."</p>
-								</div>
+								<!--	<p>".$row['description']."</p>
+								<!--</div>
 								
 
-						</div>
-						<hr>
-						<div class=\"row\">
+						</div>-->
+						<?php
+						?>
+						
+						
+						<br><hr>";
+                        if($_SESSION['logged_in']==1){
+                            echo "<p><h3>Description: </h3>".$row['description']."</p>
+                                  <br><hr><h3> Contact Seller: </h3> <p>".$row['seller']."</p>";
+                        }else{
+                            echo "<p>You hsve to be logged in to see description and Contact!</p>";
+                        }
+                        echo "
+						<!--<div class=\"row\">
 							<div class=\"col-sm-12 col-md-6 col-lg-6\">
 									<a href=\"javascript:void(0);\" class=\"btn btn-success btn-lg\">Contact Seller</a>
 							</div>
 							<div class=\"col-sm-12 col-md-6 col-lg-6\">
 
-							</div>
+							</div>-->
+							
 						</div>
 					</div>
 				</div>
