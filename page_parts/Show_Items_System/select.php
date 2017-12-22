@@ -54,7 +54,7 @@ if(mysqli_num_rows($result) > 0)
     $output .= '  
            <tr>  
                 <td>add</td>  
-                <td id="img" contenteditable></td>  
+                <td id="img" contenteditable><form action="checkSell.php" target="_blank" method="post" enctype="multipart/form-data"><input type="file" name="img"></form></td>  
                 <td id="name" contenteditable></td>  
                 <td id="discription" contenteditable></td>  
                 <td id="price" contenteditable></td>  
@@ -72,3 +72,26 @@ $output .= '</table>
       </div>';
 echo $output;
 ?>
+<script>
+    document.getElementById('picField').onchange = function (evt) {
+        var tgt = evt.target || window.event.srcElement,
+            files = tgt.files;
+
+        // FileReader support
+        if (FileReader && files && files.length) {
+            var fr = new FileReader();
+            fr.onload = function () {
+                document.getElementById(outImage).src = fr.result;
+            }
+            fr.readAsDataURL(files[0]);
+        }
+
+        // Not supported
+        else {
+            // fallback -- perhaps submit the input to an iframe and temporarily store
+            // them on the server until the user's session ends.
+        }
+    }
+
+    $
+</script>

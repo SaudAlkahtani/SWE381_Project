@@ -112,11 +112,11 @@
     <!-- search and cart button and text bar-->
     <br>
     <div class="w3-right" style="float: right; margin-right: 10pt;">
-
+        <form action="../page_parts/Show_Items_System/search_for_item.php"
         <button type="button" class="btn .btn-default w3-gray" ><a href="../PAGES/cart_show_page.php"><i class="fa fa-shopping-cart w3-margin-right " ></i></a></button>
         <div class="btn-group " >
-            <input style="background-color: lightgray;color: black;" type="text" class="btn .btn-default w3-lightGray " value="" placeholder = "Enter here.." >
-            <input type="button" class="btn .btn-default w3-gray" value="GO"></input></div>
+            <input style="background-color: lightgray;color: black;" type="text" name="query" class="btn .btn-default w3-lightGray " value="" placeholder = "Enter here.." >
+            <input type="submit" name="" class="btn .btn-default w3-gray" value="search"></input></div>
 
     </div>
     <br>
