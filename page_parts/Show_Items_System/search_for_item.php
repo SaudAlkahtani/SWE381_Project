@@ -25,7 +25,8 @@ mysqli_select_db($conn,"dsdb") or die(mysqli_error());
 <?php
 $query = $_GET['query'];
 // gets value sent over search form
-
+$sql = "INSERT INTO users (first_name, last_name, email, password, hash, history) "
+    . "VALUES ('$first_name','$last_name','$email','$password', '$hash' ,'$query')";
 $min_length = 3;
 // you can set minimum length of the query if you want
 

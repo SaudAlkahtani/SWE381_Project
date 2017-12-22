@@ -1,5 +1,4 @@
-
-<head>
+<head xmlns="http://www.w3.org/1999/html">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -49,7 +48,6 @@
         background-color: white;
     }
 </style>
-
 <nav class="w3-right" >
     <nav class=" w3-sidebar w3-bar-block  w3-white  w3-animate-right  " style="z-index:3;width:200px;display:none" id="mySidebar" >
         <button class="w3-bar-item w3-button w3-large w3-center" onclick="w3_close()">Close &times;</button>
@@ -117,31 +115,37 @@
         <div class="btn-group " >
 
             <form action="../page_parts/Show_Items_System/search_for_item.php" method="GET">
-            <input style="background-color: lightgray;color: black;" type="text" name="query" class="btn .btn-default w3-lightGray " value="" placeholder = "Enter here.." >
-            <input type="submit" class="btn .btn-default w3-gray" value="GO"></input></div>
+            <input style="background-color: lightgray;color: black;" type="text" class="btn .btn-default w3-lightGray " value="" placeholder = "Enter here.." >
+            <input type="button" class="btn .btn-default w3-gray" value="GO"></input></div>
             </form>
     </div>
     <br>
     <br>
 
 
-    <div  class="w3-right" style="padding-right:10px;padding-left: 2px"><a href="../PAGES/HomeDStest.php"><button id="home" type="button"   style="width: 90px;color: black;" class="btn fa fa-home" ></button></a></div>
+    <div  class="w3-right " style="background-color: tomato;padding-right:10px;padding-left: 2px"><a href="../PAGES/HomeDStest.php"><button id="home" type="button"   style="width: 90px;color: black; background-color: tomato;" class="btn fa fa-home" ></button></a></div>
 
+    <div class='w3-right' id="loginButtonDiv" ><a href='../page_parts/login_System/index.php'><button id='Login' type='button'   style='width: 90px;color: black' class='btn' >
 
+                <?php
+                if($_SESSION['logged_in'] == 1)
+                    echo ("<i class=\"fa fa-user\" aria-hidden=\"true\"></i>");
+                else
+                    echo ("<i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i>");
+                ?>
 
-    <?php
-    $loginOrNot = $_SESSION['logged_in'];
+            </button></a>
+    </div>
+    <div class='w3-right' id="loginButtonDiv" ><a href='../PAGES/interests.php'><button id='Login' type='button'   style='width: 90px;color: black' class='btn' >
+                <?php
+                if($_SESSION['logged_in'] == 1)
+                    echo ("<i class=\"fa fa-envelope\" aria-hidden=\"true\" '></i>");
+                else
+                    echo ("<i class=\"fa fa-envelope-o\" aria-hidden=\"true\"'></i>");
+                ?>
 
-    if( (int)$loginOrNot == 1){
-        echo("<div class='w3-right' id='loginButtonDiv' ><a href='../PAGES/cart_show_page.php'><button id='Login' type='button'   style='width: 90px;color: black' class='btn fa fa-user' ></button></a></div>");
-        echo ("<div  class='w3-right' style='padding-right:10px;padding-left: 2px'><a href='.././page_parts/login_System/logout.php'><button id='home' type='button'   style='width: 90px;color: black;' class='btn' >LogOut</button></a></div>");
-    }
-    else
-        echo ("<div class='w3-right' id='loginButtonDiv' ><a href='../page_parts/login_System/index.php'><button id='Login' type='button'   style='width: 150px;color: black' class='btn' >Login~register</button></a></div>");
-    ?>
-
-
-
+            </button></a>
+    </div>
 
 
 
@@ -150,7 +154,7 @@
 
 <!-- Overlay (effect when opening sidebar) on small screens and larg screen-->
 <div class="w3-overlay w3-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
+</div>
 <!-- Top header -->
 <script>
     function w3_open() {
