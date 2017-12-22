@@ -3,6 +3,11 @@
 session_start();
 //define($_SESSION['logged_in'],"loging_constant");
 // Check if user is logged in using the session variable
+/**
+ * @param $xID
+ * @param $conn
+ */
+
 
 
 
@@ -28,9 +33,7 @@ else {
 }
 ?>
 
-<!DOCTYPE html>
-<html >
-<title>Home_DS_page</title>
+
 <head>
 
     <script src="../https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -76,10 +79,10 @@ else {
 
 
 
-
-
-
 </body>
 
 </html>
+
+
+
 
