@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 21, 2017 at 03:18 PM
+-- Generation Time: Dec 22, 2017 at 02:41 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -53,7 +53,8 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `hash
 (8, 'etrstdf', 'ertsdf', 'rwgsdf@h.com', '$2y$10$X56iQdO47CzpYAPKPY/PQ.GQtuIZWCjGypSfatCWwgM/UEPMSihki', '9f61408e3afb633e50cdf1b20de6f466', 0),
 (9, 'rwdsad', 'waikfh', 'alsirhdkf@hdx.com', '$2y$10$YB9Lmjygd0XlxeVAHN5GmuPH7RivbLPBKD96OlKnOYRNaRzWD2PTW', 'bea5955b308361a1b07bc55042e25e54', 0),
 (10, 'rtvfdctr', 'rgefdsa', 'rwsdtkhgmjnjf@gmail.com', '$2y$10$kUCSWOE30wfVftcwg3R4W.LJ3LvaQdQz8BHq8rkYYQNqWSTCOj6Ge', 'd34ab169b70c9dcd35e62896010cd9ff', 0),
-(11, 'y', 'n', 'a@gmail.com', '$2y$10$3tOnulwH7E/9OWlHQXsEw.w4faMPwbh1KflZi8pz25Nos6wT4UgQ6', 'b4288d9c0ec0a1841b3b3728321e7088', 1);
+(11, 'y', 'n', 'a@gmail.com', '$2y$10$3tOnulwH7E/9OWlHQXsEw.w4faMPwbh1KflZi8pz25Nos6wT4UgQ6', 'b4288d9c0ec0a1841b3b3728321e7088', 1),
+(12, 'admin', 'admin', 'admin@gmail.com', '$2y$10$eB6a1oxhf315aPQSf4Pd9OuABsOITDatSMHbi9o6GRSGkzjlCFPES', '07e1cd7dca89a1678042477183b7ac3f', 1);
 
 --
 -- Indexes for dumped tables
@@ -73,7 +74,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
