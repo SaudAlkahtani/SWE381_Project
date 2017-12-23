@@ -22,32 +22,23 @@
         font-size: 15px;
         transition: 0.4s;
     }
-
-    .item{
-        height: 50%;
-        width: 100%;
-    }
-    .container{
-        height: 50%;
-        width: 100%;
-
-    }
-    #myCarousel{
-        height: 50%;
-        width: 100%;
+    .head {
+        background-image: url("https://wallpaperscraft.com/image/space_art_universe_97750_3840x2160.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
     button.accordion.active, button.accordion:hover {
         background-color: #ccc;
         color:black;
         font-size: 20px;
     }
-
     div.panel {
         padding: 0 5px;
         margin: 0;
         display: none;
         background-color: white;
     }
+
 </style>
 
 <nav class="w3-right" >
@@ -105,30 +96,21 @@
 
 
 <!-- Top menu on small screens and larg screen -->
-<header  class="w3-bar w3-top  w3-black  " style="margin-left: 0pt;text-align: center;z-index: 2">
-    <div class="w3-bar-item w3-padding-24 "><img src="https://image.ibb.co/bTn03G/Diversty_Shop_Home_Page_LOGOSmale_Screen.png" height=100pt width=80pt alt="DiverstyShop"/></div>
+<header  class="w3-bar w3-top  w3-black  head" style="margin-left: 0pt;text-align: center;z-index: 2">
+    <div class="w3-bar-item w3-padding-24 " style="background-color: black"><a style="background-color: black"  href="../PAGES/HomeDStest.php">
+                    <img style="background-color: black" src="https://image.ibb.co/bTn03G/Diversty_Shop_Home_Page_LOGOSmale_Screen.png" height=140pt width=150pt alt="DiverstyShop"/></a></div>
+
     <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
 
     <!-- search and cart button and text bar-->
     <br>
     <div class="w3-right" style="float: right; margin-right: 10pt;">
         <form action="../PAGES/searched%20items.php"
-        <button type="button" class="btn .btn-default w3-gray" ><a href="../PAGES/cart_show_page.php"><i class="fa fa-shopping-cart w3-margin-right " ></i></a></button>
-        <div class="btn-group " >
-            <input style="background-color: lightgray;color: black;" type="text" minlength="3" name="query" class="btn .btn-default w3-lightGray " value="" placeholder = "Enter here.." >
-            <input type="submit" name="" class="btn .btn-default w3-gray" value="search"></input></div>
+        <div  class="btn-group">
+            <input style="background-color: lightgray;color: black;" type="text" minlength="3" name="query" class="btn .btn-default w3-lightGray " value="" placeholder = "" >
+            <input style="background-color: tomato; color: black" type="submit" name="" class="btn .btn-default" value="search"></input></div>
         </form>
-    </div>
-    <br>
-    <br>
-
-    <div style="padding-right: 50px;">
-    <div  class="w3-right" style="padding-right:10px;padding-left: 2px"><a href="../PAGES/HomeDStest.php"><button id="home" type="button"   style="width: 90px;color: black;" class="btn fa fa-home" ></button></a></div>
-
-
-
-
-
+    <div class="w3-right" style="padding-right:10px;padding-left: 2px"><a href="../PAGES/HomeDStest.php"><button id="home" type="button"   style="width: 90px;color: black;" class="btn fa fa-home" ></button></a></div>
     <?php
     require '../DataBases_DS/db.php';
     $isThereNinifcation = false;
@@ -145,22 +127,20 @@
         echo ("<div class='w3-right' id='loginButtonDiv' style='padding-right:10px;padding-left: 2px' ><a href='../page_parts/login_System/index.php'><button id='Login' type='button'   style='width: 90px;color: black;' class='btn fa fa-sign-in' ></button></a></div>");
     }
     if( (int)$loginOrNot == 1) {
-        echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px'><a href='../PAGES/cart_show_page.php'><button id='Login' type='button'  style='width: 90px;color: black;' class='btn fa fa-user' ></button></a></div>");
+        echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px'><a href='../PAGES/cart_show_page.php'><button  type='button'  style='width: 90px;color: black;' class='btn fa fa-user' ></button></a></div>");
         if($isThereNinifcation) {
-            echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px;'><a href='../PAGES/interests.php'><button id='interests' type='button' style='width: 90px;color: black;' class='btn-success' ><i class='fa fa-envelope' aria-hidden='true' '></i></button></a></div> ");
+            echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px;'><a href='../PAGES/interests.php'><button id='interests' type='button' style='width: 200px;color: black;' class='btn-success' ><i class='fa fa-envelope' aria-hidden='true' '></i></button></a></div> ");
             echo ("<script>alert('WE have found some thing you interest in, check the NOTIFICATION box ');</script>");
         } else {
-            echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px;'><a href='../PAGES/interests.php'><button id='interests' type='button' style='width: 90px;color: black;' class='btn' ><i class='fa fa-envelope' aria-hidden='true' '></i></button></a></div>");
+            echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px;'><a href='../PAGES/interests.php'><button id='interests' type='button' style='width: 90px;color: black;' class='btn ' ><i class='fa fa-envelope' aria-hidden='true' '></i></button></a></div>");
         }
-        echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px'><a href='.././page_parts/login_System/logout.php'><button id='home' type='button'   style='width: 90px;color: black;' class='btn' >Logout</button></a></div>");
+        echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px'><a href='.././page_parts/login_System/logout.php'><button  type='button'   style='width: 90px;color: black;' class='btn' >Logout</button></a></div>");
     }
     ?>
+        <br>
+        <br>
+        <h1 style="color: lightgray">EASY SHOPPING..</h1>
     </div>
-
-
-
-
-
 </header>
 
 <!-- Overlay (effect when opening sidebar) on small screens and larg screen-->

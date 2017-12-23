@@ -52,7 +52,7 @@ else {
     ?>
 </div>
 
-
+<br><br><br>
 <div id="includedContent3" style="height: 500px ;width: 100%">
     <?php
     include_once ('../page_parts/slider_show.html')
@@ -60,6 +60,9 @@ else {
   
 </div>
 <br><br><br><br><br><br>
+<br><br>
+
+
 <div id="includeContent4"  style="background: white">
 
     <?php

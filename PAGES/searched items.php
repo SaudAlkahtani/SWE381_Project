@@ -57,7 +57,9 @@ else {
     <?php
     include_once ('../page_parts/slider_show.html')
     ?>
-
+<br>
+    <br>
+    <br>
 </div>
 <br><br><br><br><br><br>
 <div id="includeContent4"  style="background: white">
