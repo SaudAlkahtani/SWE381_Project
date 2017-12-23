@@ -7,7 +7,7 @@ require('Show_Items_System/db.php');
 <html>
 <head>
     <meta charset = "utf-8">
-    <meta name= "description" content= "takes the information of the item">
+    <meta name= "descriptio n" content= "takes the information of the item">
     <title>sell</title>
     <style>
         button.accordion {

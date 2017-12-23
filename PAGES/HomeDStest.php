@@ -37,6 +37,7 @@ else {
     ?>
 </div>
 
+<br><br><br><br><br><br>
 
 <div id="includedContent3" style="height: 500px ;width: 100%">
     <?php
