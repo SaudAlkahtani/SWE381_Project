@@ -5,7 +5,8 @@
  * Date: 12/18/2017
  * Time: 5:31 PM
  */
-require('Show_Items_System/db.php');
+require('../Show_Items_System/db.php');
+session_start();
 if($conn->connect_error){
     die("Connection failed: " . $conn->connect_error);
 }
@@ -20,12 +21,12 @@ if(isset($_POST["upload"])){
         $name = addslashes($_POST['Name']);
         $price = $_POST['Price'];
         $type = $_POST['types'];
-
-
+        $description = addslashes($_POST['description']);
+        $seller=$_SESSION['email'];
         //Insert image content into database
         //$insert = $db->query("INSERT into items (image, created) VALUES ('$imgContent', '$dataTime')");
-        $sql = "INSERT INTO items (name, price, img)
-            VALUES ('$name', '$price', '$imgContent')";
+        $sql = "INSERT INTO items (name, type, price, img , description,seller)
+            VALUES ('$name','$type', '$price', '$imgContent', '$description' , '$seller')";
 
         if(mysqli_query($conn,$sql)){
             echo "item added Successfully!.";
