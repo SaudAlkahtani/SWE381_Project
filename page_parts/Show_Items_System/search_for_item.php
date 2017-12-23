@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 $host = 'localhost';
 $user = 'root';
 $pass = '';
@@ -13,7 +13,7 @@ $mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
     <title>Search</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
-<body>
+</html>
 <?php
 $conn =mysqli_connect("localhost", "root", "","dbitems");
 
@@ -57,29 +57,50 @@ if(strlen($query) >= $min_length){ // if query length is more or equal minimum l
     // or if you want to match just full word so "gogohello" is out use '% $query %' ...OR ... '$query %' ... OR ... '% $query'
 
     if(mysqli_num_rows($raw_results) > 0){ // if one or more rows are returned do following
-
+ echo  (" <div class='container'> <div class='row'>");
         while($results = mysqli_fetch_array($raw_results)){
+
+                echo ("<div class='col-md-3'>
+        <div class='ibox'>
+            <div class='ibox-content product-box'>
+            <div class='product-imitation'> <img src='data:image/jpeg;base64," . base64_encode( $results['img'] )."' height='200px' width='200px'/> </div>
+                <div class='product-desc'>
+                    <span class='product-price'> $" . $results["price"]. "</span>
+                    <small class='text-muted'>the type of the item </small>
+                    <a href='#' class='product-name'> name :". $results['name']."</a>
+                    <div class='small m-t-xs'>Description</div>
+                    <div class='m-t text-righ'>
+                        <a href='#' class='btn btn-xs btn-outline btn-primary'>add to Cart <i class='fa fa-long-arrow-right'></i> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>");
+            }
+            echo "</div> </div>";
             // $results = mysql_fetch_array($raw_results) puts data from database into array, while it's valid it does the loop
 
-            echo "<p><h3>".$results['name']."</h3> <img src='".$results['img']."'></p>";
+
             // posts results gotten from database(title and text) you can also show id ($results['id'])
-        }
+
 
     }
     else{ // if there is no matching rows do following
         echo "No results";
     $TheWord = $query;
+
     if($_SESSION['logged_in'] == 1){
     $sql ='SELECT * FROM users ';
+    $email = $_SESSION['email'];
+    $fn = $_SESSION['first_name'];
 
     $result = $mysqli->query($sql);
     if ($result->num_rows > 0) {
-    // output data of each row
+    // output data of each row //
     while($row = $result->fetch_assoc()) {
     if($_SESSION['email'] == $row['email']){
-        $sql = "UPDATE `users` SET `history` = ".$TheWord." WHERE `users`.`id`= ".$row['id'];
+        $sql = "UPDATE users SET history ='$TheWord' WHERE email = '$email'";
         mysqli_query($mysqli, $sql);
-
     }
     }
     }
@@ -87,19 +108,9 @@ if(strlen($query) >= $min_length){ // if query length is more or equal minimum l
 }
 
 }
-else{ // if query length is less than minimum
-     echo "<script>
-
-to_Call_When_oked__Or_closed();
-alert('you need to enter atleast 3 digits').handler(to_Call_When_oked__Or_closed());
-function to_Call_When_oked__Or_closed(){
-    header('location: ../../PAGES/HomeDStest.php');
-    print('xcv');
-}
-</script>";
+else{ // if query length is less than minimu
 
 
 }
 ?>
-</body>
-</html>
+
