@@ -1,9 +1,12 @@
 <?php
+
+
 session_start();
+require '.././page_parts/login_System/db.php';
 if($_SESSION['logged_in'] != 1){
-     header("location: HomeDStest.php");
+    header("location: HomeDStest.php");
 }
-    ?>
+?>
 <!DOCTYPE html>
 <html >
 <title>cart_show_page</title>
@@ -35,7 +38,22 @@ if($_SESSION['logged_in'] != 1){
 <br><br><br><br><br><br><br><br><br>
 <div class="w3-border ">
     <?php
-    include  ('show_items_index.php');
+    include  ('../page_parts/Show_Items_System/show_interests.php');
+
+    $sql ='SELECT * FROM users ';
+
+    $result = $mysqli->query($sql);
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            if($_SESSION['email'] == $row['email']){
+                $sql = "UPDATE `users` SET `history` = NULL WHERE `users`.`id`=".$row['id'];
+                mysqli_query($mysqli, $sql);
+                $_SESSION['history']=NULL;
+                break;
+            }
+        }
+    }
     ?>
 </div>
 

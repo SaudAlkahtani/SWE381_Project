@@ -6,12 +6,15 @@
  * Time: 5:31 PM
  */
 require('../Show_Items_System/db.php');
+
 session_start();
+
+
 if($conn->connect_error){
     die("Connection failed: " . $conn->connect_error);
 }
 
-if(isset($_POST["upload"])){
+
     $check = getimagesize($_FILES["image"]["tmp_name"]);
     if($check !== false){
         $image = $_FILES['image']['tmp_name'];
@@ -28,6 +31,7 @@ if(isset($_POST["upload"])){
         $sql = "INSERT INTO items (name, type, price, img , description,seller)
             VALUES ('$name','$type', '$price', '$imgContent', '$description' , '$seller')";
 
+
         if(mysqli_query($conn,$sql)){
             echo "item added Successfully!.";
         }else{
@@ -36,10 +40,7 @@ if(isset($_POST["upload"])){
     }else{
         echo "Please select an image file to upload.";
     }
-}
-else {
-    echo "didnt upload file or item!";
-}
+
 
 //$name = $_POST['Name'];
 //$price = $_POST['Price'];

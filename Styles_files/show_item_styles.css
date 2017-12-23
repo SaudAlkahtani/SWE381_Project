@@ -40,10 +40,10 @@
     height: 500px;
 }
 .ecommerce .fa-star {
-    color: #d1dade;
+    color: rgba(0, 0, 0, 0.2);
 }
 .ecommerce .fa-star.active {
-    color: #f8ac59;
+    color: rgba(0, 0, 0, 0.78);
 }
 .ecommerce .note-editor {
     border: 1px solid #e7eaec;

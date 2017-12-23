@@ -112,32 +112,51 @@
     <!-- search and cart button and text bar-->
     <br>
     <div class="w3-right" style="float: right; margin-right: 10pt;">
-
+        <form action="../PAGES/searched%20items.php"
         <button type="button" class="btn .btn-default w3-gray" ><a href="../PAGES/cart_show_page.php"><i class="fa fa-shopping-cart w3-margin-right " ></i></a></button>
         <div class="btn-group " >
-
-
-            <input style="background-color: lightgray;color: black;" type="text" class="btn .btn-default w3-lightGray " value="" placeholder = "Enter here.." >
-            <input type="button" class="btn .btn-default w3-gray" value="GO"></input></div>
-
+            <input style="background-color: lightgray;color: black;" type="text" minlength="3" name="query" class="btn .btn-default w3-lightGray " value="" placeholder = "Enter here.." >
+            <input type="submit" name="" class="btn .btn-default w3-gray" value="search"></input></div>
+        </form>
     </div>
     <br>
     <br>
 
+    <div style="padding-right: 50px;">
+    <div  class="w3-right" style="padding-right:10px;padding-left: 2px"><a href="../PAGES/HomeDStest.php"><button id="home" type="button"   style="width: 90px;color: black;" class="btn fa fa-home" ></button></a></div>
 
-    <div  class="w3-right" style="padding-right:10px;padding-left: 2px"><a href="../PAGES/HomeDStest.php"><button id="home" type="button"   style="width: 90px;color: black;" class="btn" >Home</button></a></div>
 
-    <div class='w3-right' id="loginButtonDiv" ><a href='../page_parts/login_System/index.php'><button id='Login' type='button'   style='width: 150px;color: black' class='btn' >
 
-                <?php
-                if($_SESSION['logged_in'] == 1)
-                    echo ("profile V");
-                else
-                    echo ("Login//register");
-                ?>
 
-            </button></a>
+
+    <?php
+    require '../DataBases_DS/db.php';
+    $isThereNinifcation = false;
+    $loginOrNot = $_SESSION['logged_in'];
+    if($loginOrNot == 1) {
+        $hs = $_SESSION['history'];
+        if ($hs != NULL) {
+            $sql = "SELECT * FROM items WHERE (`name` LIKE '%" . $hs . "%')";
+            $result = mysqli_query($conn, $sql);
+            $isThereNinifcation = mysqli_num_rows($result)>0?true:false;
+        }
+    }
+    if( (int)$loginOrNot != 1){
+        echo ("<div class='w3-right' id='loginButtonDiv' style='padding-right:10px;padding-left: 2px' ><a href='../page_parts/login_System/index.php'><button id='Login' type='button'   style='width: 90px;color: black;' class='btn fa fa-sign-in' ></button></a></div>");
+    }
+    if( (int)$loginOrNot == 1) {
+        echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px'><a href='../PAGES/cart_show_page.php'><button id='Login' type='button'  style='width: 90px;color: black;' class='btn fa fa-user' ></button></a></div>");
+        if($isThereNinifcation) {
+            echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px;'><a href='../PAGES/interests.php'><button id='interests' type='button' style='width: 90px;color: black;' class='btn-success' ><i class='fa fa-envelope' aria-hidden='true' '></i></button></a></div> ");
+            echo ("<script>alert('WE have found some thing you interest in, check the NOTIFICATION box ');</script>");
+        } else {
+            echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px;'><a href='../PAGES/interests.php'><button id='interests' type='button' style='width: 90px;color: black;' class='btn' ><i class='fa fa-envelope' aria-hidden='true' '></i></button></a></div>");
+        }
+        echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px'><a href='.././page_parts/login_System/logout.php'><button id='home' type='button'   style='width: 90px;color: black;' class='btn' >Logout</button></a></div>");
+    }
+    ?>
     </div>
+
 
 
 

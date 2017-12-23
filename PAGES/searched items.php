@@ -24,10 +24,10 @@ if ( $_SESSION['logged_in'] != 1 ) {
 }
 else {
     // Makes it easier to read
-   // $first_name = $_SESSION['first_name'];
+    // $first_name = $_SESSION['first_name'];
     //$last_name = $_SESSION['last_name'];
-   // $email = $_SESSION['email'];
-   // $active = $_SESSION['active'];
+    // $email = $_SESSION['email'];
+    // $active = $_SESSION['active'];
 
     $message="you are logged in!";
 }
@@ -57,13 +57,13 @@ else {
     <?php
     include_once ('../page_parts/slider_show.html')
     ?>
-  
+
 </div>
 <br><br><br><br><br><br>
 <div id="includeContent4"  style="background: white">
 
     <?php
-    include  ('../page_parts/Show_Items_System/showItmes.php');
+    include  ('../page_parts/Show_Items_System/search_for_item.php');
     ?>
 
 </div>
