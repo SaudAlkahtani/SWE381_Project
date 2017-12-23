@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+
   <component name="PublishConfigData" serverName="xampp">
     <serverData>
       <paths name="xampp">
         <serverdata>
           <mappings>
             <mapping deploy="swe381Project" local="$PROJECT_DIR$" web="/swe381Project" />
+
           </mappings>
         </serverdata>
       </paths>
