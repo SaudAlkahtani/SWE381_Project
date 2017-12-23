@@ -38,7 +38,7 @@ if(strlen($query) >= $min_length){ // if query length is more or equal minimum l
     // makes sure nobody uses SQL injection
 
     $raw_results = mysqli_query($conn,"SELECT * FROM items
-            WHERE (`name` LIKE '%".$query."%') OR (`discription` LIKE '%".$query."%')") or die(mysqli_error($conn));
+            WHERE (`name` LIKE '%".$query."%') OR (`id` LIKE '%".$query."%')") or die(mysqli_error($conn));
 
     // * means that it selects all fields, you can also write: `id`, `title`, `text`
     // articles is the name of our table
