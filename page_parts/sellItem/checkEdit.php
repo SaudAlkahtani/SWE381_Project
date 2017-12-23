@@ -42,7 +42,11 @@ if(isset($_POST["upload"])){
          //   VALUES ('$name','$type', '$price', '$imgContent', '$description' , '$seller')";
 
         if(mysqli_query($conn,$sql)){
-            echo "item edited Successfully!.";
+            echo "item edited Successfully!. \n";
+            echo " you'll be redirected to your items list in 3 Seconds!";
+            header( "refresh:3;url=../../PAGES/cart_show_page.php" );
+
+
         }else{
             echo "item was not edited ";
         }

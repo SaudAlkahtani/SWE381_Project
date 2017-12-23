@@ -66,11 +66,11 @@ if(strlen($query) >= $min_length){ // if query length is more or equal minimum l
             <div class='product-imitation'> <img src='data:image/jpeg;base64," . base64_encode( $results['img'] )."' height='200px' width='200px'/> </div>
                 <div class='product-desc'>
                     <span class='product-price'> $" . $results["price"]. "</span>
-                    <small class='text-muted'>the type of the item </small>
-                    <a href='#' class='product-name'> name :". $results['name']."</a>
-                    <div class='small m-t-xs'>Description</div>
+                    <small class='text-muted'>". $results['type']."  </small>
+                    <a href='../../swe381Project/PAGES/product_full_detail.php?id=".$results['id']."' class='product-name'>". $results['name']."</a>
+                    ".$results['description']."
                     <div class='m-t text-righ'>
-                        <a href='#' class='btn btn-xs btn-outline btn-primary'>add to Cart <i class='fa fa-long-arrow-right'></i> </a>
+                     
                     </div>
                 </div>
             </div>

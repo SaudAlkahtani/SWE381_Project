@@ -107,10 +107,10 @@ if ($result->num_rows > 0) {
             </select>
             </span>
         <br>
-        <p><input type="text" placeholder="name" value="<?php echo "$name";  ?>" name="Name" required ></p>
-        <p><input type="text" placeholder="Price" name="Price" required value="<?php echo "$price" ?>" ></p>
+        <p>Name: <input type="text" placeholder="name" value="<?php echo "$name";  ?>" name="Name" required ></p>
+        <p>Price: <input type="text" placeholder="Price" name="Price" required value="<?php echo "$price" ?>" ></p>
 
-        <h5>re enter the  description for the product: </h5>
+        <h5>Re enter the  description for the product: </h5>
         <textarea type="text" placeholder="description" rows="10" cols="60" name="description" value="<?php echo "$description" ?>" id="textarea"> </textarea>
 
         <p>upload an image for the product:

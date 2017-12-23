@@ -11,12 +11,13 @@ $output .= '
       <div class="table-responsive">  
            <table class="table table-bordered">  
                 <tr>  
-                     <th width="5%">Id</th>  
+                    
                      <th width="20%">Img</th>  
                      <th width="20%">Name</th>  
                      <th width="40%">Discription</th>  
                      <th width="10%">Price</th>  
                      <th width="10%">Delete</th>  
+                     <th width="10%">Edit </th>
                 </tr>';
 if(mysqli_num_rows($result) > 0)
 {
@@ -25,13 +26,13 @@ if(mysqli_num_rows($result) > 0)
         if ($user_email == $row['seller'] ) {
             $output .= '  
                 <tr>  
-                     <td>' . $row["id"] . '</td>  
-                     <td class="img"   data-id0="' . $row["id"] . '" contenteditable><img style="height: 20px;width: 20px" src="' . $row["img"] . '"/></td>  
+                  
+                     <td class="img"   data-id0="' . $row["id"] . '" contenteditable><img style="height: 20px;width: 20px" src="data:image/jpeg;base64,' . base64_encode( $row["img"]) .'"/></td> 
                      <td class="name" data-id1="' . $row["id"] . '" contenteditable>' . $row["name"] . '</td>  
-                     <td class="discription" data-id2="' . $row["id"] . '" contenteditable>' . $row["discription"] . '</td> 
+                     <td class="discription" data-id2="' . $row["id"] . '" contenteditable>' . $row["description"] . '</td> 
                      <td class="price" data-id3="' . $row["id"] . '" contenteditable>' . $row["price"] . '</td>  
- 
-                     <td><button type="button" name="delete_btn" data-id4="' . $row["id"] . '" class="btn btn-xs btn-danger btn_delete">x</button></td>  
+                     <td><button type="button" name="delete_btn" data-id4="' . $row["id"] . '" class="btn btn-xs btn-danger btn_delete">x</button></td> 
+                     <td><button type="button" name="edit_btn" data-id4="' . $row["id"] . '" class="btn btn-xs btn-danger btn_delete">x</button></td>
                 </tr>  
            ';
             continue;
@@ -40,10 +41,10 @@ if(mysqli_num_rows($result) > 0)
         if ("admin@gmail.com" == $user_email){
             $output .= '  
                 <tr>  
-                     <td>' . $row["id"] . '</td>  
-                     <td class="img"   data-id0="' . $row["id"] . '" contenteditable><img style="height: 20px;width: 20px" src="' . $row["img"] . '"/></td>  
+                   
+                     <td class="img"   data-id0="' . $row["id"] . '" contenteditable><img style="height: 20px;width: 20px" src="data:image/jpeg;base64,' . base64_encode( $row["img"]) .'"/></td>   
                      <td class="name" data-id1="' . $row["id"] . '" contenteditable>' . $row["name"] . '</td>  
-                     <td class="discription" data-id2="' . $row["id"] . '" contenteditable>' . $row["discription"] . '</td> 
+                     <td class="discription" data-id2="' . $row["id"] . '" contenteditable>' . $row["description"] . '</td> 
                      <td class="price" data-id3="' . $row["id"] . '" contenteditable>' . $row["price"] . '</td>  
  
                      <td><button type="button" name="delete_btn" data-id4="' . $row["id"] . '" class="btn btn-xs btn-danger btn_delete">x</button></td>  
@@ -54,10 +55,7 @@ if(mysqli_num_rows($result) > 0)
     $output .= '  
            <tr>  
                 <td>add</td>  
-                <td id="img" contenteditable><form action="checkSell.php" target="_blank" method="post" enctype="multipart/form-data"><input type="file" name="img"></form></td>  
-                <td id="name" contenteditable></td>  
-                <td id="discription" contenteditable></td>  
-                <td id="price" contenteditable></td>  
+               
                 <td><button type="button" name="btn_add" id="btn_add" class="btn btn-xs btn-success">+</button></td>  
            </tr>  
       ';
