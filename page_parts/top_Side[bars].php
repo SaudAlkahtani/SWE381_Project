@@ -1,5 +1,6 @@
 
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -143,23 +144,28 @@
     </div>
 </header>
 
-<!-- Overlay (effect when opening sidebar) on small screens and larg screen-->
-<div class="w3-overlay w3-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-<!-- Top header -->
-<script>
-    function w3_open() {
-
-        document.getElementById("mySidebar").style.display = "block";
-        document.getElementById("myOverlay").style.display = "block";
-
-    }
-
-    function w3_close() {
-        document.getElementById("mySidebar").style.display = "none";
-        document.getElementById("myOverlay").style.display = "none";
-    }
+        <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a>
+        <a href="#footer"  class="w3-bar-item w3-button w3-padding">Subscribe</a>
+    </nav>
 
 
 
-</script>
+    <!-- Top menu on small screens and larg screen -->
+    <header  class="w3-bar w3-top  w3-black  head" style="margin-left: 0pt;text-align: center;z-index: 2; height: 25 0px;">
+        <div class="w3-bar-item w3-padding-24 "><img src="https://image.ibb.co/bTn03G/Diversty_Shop_Home_Page_LOGOSmale_Screen.png" height=200pt width=200pt alt="DiverstyShop"/></div>
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+
+
+        <br>
+        <div class="w3-right" style="float: right; margin-right: 10pt;">
+            <div class="btn-group " >
+                <input style="background-color: white;color: black;" type="text" class="btn .btn-default " value="" placeholder = "" >
+                <input style="background-color: tomato;color: black;" type="button" class="btn .btn-default " value="GO"></input></div>
+        </div>
+        <br>
+        <br>
+
+        <div style="padding-right: 50px;">
+            <div  class="w3-right" style="padding-right:10px;padding-left: 2px"><a href="../PAGES/HomeDStest.php"><button id="home" type="button"   style="width: 90px;color: black; background-color: white; " class="btn fa fa-home" ></button></a></div>
+        </div>

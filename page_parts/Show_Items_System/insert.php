@@ -9,3 +9,4 @@ if(mysqli_query($conn, $sql))
     echo 'Data Inserted';
 }
 ?>
+
