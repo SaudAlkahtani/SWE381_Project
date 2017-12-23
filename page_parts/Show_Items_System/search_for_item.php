@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 $host = 'localhost';
 $user = 'root';
 $pass = '';
@@ -13,7 +13,7 @@ $mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
     <title>Search</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
-<body>
+</html>
 <?php
 $conn =mysqli_connect("localhost", "root", "","dbitems");
 
@@ -69,17 +69,19 @@ if(strlen($query) >= $min_length){ // if query length is more or equal minimum l
     else{ // if there is no matching rows do following
         echo "No results";
     $TheWord = $query;
+
     if($_SESSION['logged_in'] == 1){
     $sql ='SELECT * FROM users ';
+    $email = $_SESSION['email'];
+    $fn = $_SESSION['first_name'];
 
     $result = $mysqli->query($sql);
     if ($result->num_rows > 0) {
-    // output data of each row
+    // output data of each row //
     while($row = $result->fetch_assoc()) {
     if($_SESSION['email'] == $row['email']){
-        $sql = "UPDATE `users` SET `history` = ".$TheWord." WHERE `users`.`id`= ".$row['id'];
+        $sql = "UPDATE users SET history ='$TheWord' WHERE email = '$email'";
         mysqli_query($mysqli, $sql);
-
     }
     }
     }
@@ -87,19 +89,9 @@ if(strlen($query) >= $min_length){ // if query length is more or equal minimum l
 }
 
 }
-else{ // if query length is less than minimum
-     echo "<script>
-
-to_Call_When_oked__Or_closed();
-alert('you need to enter atleast 3 digits').handler(to_Call_When_oked__Or_closed());
-function to_Call_When_oked__Or_closed(){
-    header('location: ../../PAGES/HomeDStest.php');
-    print('xcv');
-}
-</script>";
+else{ // if query length is less than minimu
 
 
 }
 ?>
-</body>
-</html>
+
