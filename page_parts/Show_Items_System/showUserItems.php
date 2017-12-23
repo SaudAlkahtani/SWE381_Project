@@ -1,4 +1,3 @@
-
 <?php
 
 
@@ -13,7 +12,7 @@ $sql ='SELECT * FROM items ';
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 
-    echo("
+    echo ("
 
 <div class='container w3-center' style='text-align: center' >
     <div class='wrapper wrapper-content animated fadeInRight' >
@@ -24,8 +23,8 @@ if ($result->num_rows > 0) {
                         ");
 
     $user_email = $_SESSION['email'];
-    while ($row = $result->fetch_assoc()) {
-        if ($user_email == $row['seller']) {
+    while($row = $result->fetch_assoc()) {
+        if( $user_email == $row['seller']) {
 
             echo("<div class='ibox-content w3-border w3-center'>
                             <div class='table-responsive'>
@@ -34,7 +33,7 @@ if ($result->num_rows > 0) {
                                     <tr>
                                         <td width='90' height='90'>
                                             <div>
-                                            <img width='90' height='90' class='cart-product-imitation' src='data:image/jpeg;base64," . base64_encode($row['img']) . "' height='200px' width='200px'/>
+                                            <img width='90' height='90' class='cart-product-imitation' src='data:image/jpeg;base64," . base64_encode($row['img']) . "' />
                                             </div>
                                         </td>
                                         <td class='desc'>
@@ -44,19 +43,21 @@ if ($result->num_rows > 0) {
                                                 </a>
                                             </h3>
                                             <p class='small'>
-                                                " . $row['description'] . "
+                                                 " . $row['description'] . "
                                             </p>
 
                                             <div class='m-t-sm'>
                                                
                                                 <a href='../../swe381Project/page_parts/Show_Items_System/delete.php?id=" . $row['id'] . "' class='text-muted'><i class='fa fa-trash'></i> Remove item</a>
+                                                <a style='margin-left: 3px' href='../../swe381Project/page_parts/sellitem/EditItem.php?id=" . $row['id'] . "'  class='text-muted'> <i class='fa fa-pencil-square' aria-hidden='true'>Edit item</i></a>
+
 
                                             </div>
                                         </td>
 
 
                                         <td width='65'>
-                                           
+                                            
                                         </td>
                                         <td>
                                             <h4>
@@ -68,10 +69,14 @@ if ($result->num_rows > 0) {
                                 </table>
                             </div>
 
-                       
+                        </div>
 
-                        
-                </div>
+                        ");
+        }
+
+    }
+    echo ("
+                    </div>
                 </div>
 
             </div>
@@ -79,30 +84,23 @@ if ($result->num_rows > 0) {
         
 
             <div class='ibox'>
-           
-
 
             </div>
         </div>
     </div>
 </div> <br>
-
+ <a href='../../../swe381Project/page_parts/sellItem/sell.php ' class='text-muted'><i class='fa fa-trash'></i> Add item</a>
 <br><br>
 ");
 
-        }
-    }
-
-} else {
+}else {
+    echo "0 results";
 
 }
-echo " <a href='../../../swe381Project/page_parts/sellItem/sell.php ' class='text-muted'><i class='fa fa-trash'></i> Add item</a>";
-
 
 
 
 
 
 $conn->close();
-
 

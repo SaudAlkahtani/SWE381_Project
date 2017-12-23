@@ -1,5 +1,5 @@
 <?php
-require('Show_Items_System/db.php');
+require('../Show_Items_System/db.php');
 
 ?>
 
@@ -69,11 +69,10 @@ require('Show_Items_System/db.php');
             </select>
             </span>
             <br>
-        <p><input type="text" placeholder="Name" name="Name" required></p>
-        <p><input type="text" placeholder="Price" name="Price" required></p>
-        <p><input type="text" placeholder="Amount" name="Amount" required></p>
+        <p>Name:<input type="text" placeholder="Name" name="Name" required></p>
+        <p>Price:<input type="text" placeholder="Price" name="Price" required></p>
         <h5>Enter a description for the product: </h5>
-        <textarea placeholder="discreption" rows="10" cols="60"></textarea>
+        <textarea placeholder="description" rows="10" cols="60" name="description"></textarea>
 
             <p>upload an image for the product:
                 <input type= "file" name="image" accept="image">

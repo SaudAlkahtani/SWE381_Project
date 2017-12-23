@@ -1,4 +1,3 @@
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -6,6 +5,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
         button.accordion {
             background-color: #eee;
@@ -21,6 +21,7 @@
             font-size: 15px;
             transition: 0.4s;
         }
+
 
         .item{
             height: 50%;
@@ -41,6 +42,35 @@
             font-size: 20px;
         }
 
+
+        <?php
+        require '../DataBases_DS/db.php';
+        $isThereNinifcation = false;
+        $loginOrNot = $_SESSION['logged_in'];
+        if($loginOrNot == 1) {
+            $hs = $_SESSION['history'];
+            if ($hs != NULL) {
+                $sql = "SELECT * FROM items WHERE (`name` LIKE '%" . $hs . "%')";
+                $result = mysqli_query($conn, $sql);
+                $isThereNinifcation = mysqli_num_rows($result)>0?true:false;
+            }
+        }
+        if( (int)$loginOrNot != 1){
+            echo ("<div class='w3-right' id='loginButtonDiv' style='padding-right:10px;padding-left: 2px' ><a href='../page_parts/login_System/index.php'><button id='Login' type='button'   style='width: 90px;color: black;' class='btn fa fa-sign-in' ></button></a></div>");
+        }
+        if( (int)$loginOrNot == 1) {
+            echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px'><a href='../PAGES/cart_show_page.php'><button id='Login' type='button'  style='width: 90px;color: black;' class='btn fa fa-user' ></button></a></div>");
+            if($isThereNinifcation) {
+                echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px;'><a href='../PAGES/interests.php'><button id='interests' type='button' style='width: 90px;color: black;' class='btn-success' ><i class='fa fa-envelope' aria-hidden='true' '></i></button></a></div> ");
+                echo ("<script>alert('WE have found some thing you interest in, check the NOTIFICATION box ');</script>");
+            } else {
+                echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px;'><a href='../PAGES/interests.php'><button id='interests' type='button' style='width: 90px;color: black;' class='btn' ><i class='fa fa-envelope' aria-hidden='true' '></i></button></a></div>");
+            }
+            echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px'><a href='.././page_parts/login_System/logout.php'><button id='home' type='button'   style='width: 90px;color: black;' class='btn' >Logout</button></a></div>");
+        }
+        ?>
+    </div>
+
         div.panel {
             padding: 0 5px;
             margin: 0;
@@ -54,6 +84,7 @@
         }
     </style>
 </head>
+
 
 
 <div>

@@ -40,7 +40,7 @@ if ($result->num_rows > 0) {
                   <span class='posted_in'> <strong>Category: ..... </strong> 
               </div>
               <div class='m-bot15'> <strong>Price : </strong>  <span class='pro-price'> $" . $row["price"] . "</span></div>
-              <div class=\"form-group\">
+              <div class='form-group'>
                   <label>Quantity </label>
                   <input type='quantiy' placeholder='1' class='form-control quantity'>
               </div>

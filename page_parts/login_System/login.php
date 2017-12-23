@@ -23,7 +23,7 @@ else { // User exists
         // This is how we'll know the user is logged in
         $_SESSION['logged_in'] = 1;
 
-        header("location: ../../PAGES/HomeDStest.php?welcome=true");
+        header("location: ../../PAGES/HomeDStest.php?");
 
     }
     else {

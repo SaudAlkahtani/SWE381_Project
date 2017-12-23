@@ -1,10 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Search</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</head>
-<body>
+<?php
+
+$host = 'localhost';
+$user = 'root';
+$pass = '';
+$db = 'accounts';
+$mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
+
+?>
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Search</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+    </html>
 <?php
 $conn =mysqli_connect("localhost", "root", "","dbitems");
 
@@ -48,24 +57,59 @@ if(strlen($query) >= $min_length){ // if query length is more or equal minimum l
     // or if you want to match just full word so "gogohello" is out use '% $query %' ...OR ... '$query %' ... OR ... '% $query'
 
     if(mysqli_num_rows($raw_results) > 0){ // if one or more rows are returned do following
-
+        echo  (" <div class='container'> <div class='row'>");
         while($results = mysqli_fetch_array($raw_results)){
-            // $results = mysql_fetch_array($raw_results) puts data from database into array, while it's valid it does the loop
 
-            echo "<p><h3>".$results['name']."</h3> <img src='".$results['img']."'></p>";
-            // posts results gotten from database(title and text) you can also show id ($results['id'])
+            echo ("<div class='col-md-3'>
+        <div class='ibox'>
+            <div class='ibox-content product-box'>
+            <div class='product-imitation'> <img src='data:image/jpeg;base64," . base64_encode( $results['img'] )."' height='200px' width='200px'/> </div>
+                <div class='product-desc'>
+                    <span class='product-price'> $" . $results["price"]. "</span>
+                    <small class='text-muted'>". $results['type']."  </small>
+                    <a href='../../swe381Project/PAGES/product_full_detail.php?id=".$results['id']."' class='product-name'>". $results['name']."</a>
+                    ".$results['description']."
+                    <div class='m-t text-righ'>
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>");
         }
+        echo "</div> </div>";
+        // $results = mysql_fetch_array($raw_results) puts data from database into array, while it's valid it does the loop
+
+
+        // posts results gotten from database(title and text) you can also show id ($results['id'])
+
 
     }
     else{ // if there is no matching rows do following
         echo "No results";
+        $TheWord = $query;
 
+        if($_SESSION['logged_in'] == 1){
+            $sql ='SELECT * FROM users ';
+            $email = $_SESSION['email'];
+            $fn = $_SESSION['first_name'];
+
+            $result = $mysqli->query($sql);
+            if ($result->num_rows > 0) {
+                // output data of each row //
+                while($row = $result->fetch_assoc()) {
+                    if($_SESSION['email'] == $row['email']){
+                        $sql = "UPDATE users SET history ='$TheWord' WHERE email = '$email'";
+                        mysqli_query($mysqli, $sql);
+                    }
+                }
+            }
+        }
     }
 
 }
-else{ // if query length is less than minimum
-    echo "Minimum length is ".$min_length;
+else{ // if query length is less than minimu
+
+
 }
 ?>
-</body>
-</html>
