@@ -1,6 +1,7 @@
 <?php
 session_start();
 if($_SESSION['logged_in'] != 1){
+
      header("location: HomeDStest.php");
 }
     ?>
@@ -26,6 +27,9 @@ if($_SESSION['logged_in'] != 1){
 
 <body>
 
+
+<!-- start printing user items -->
+
 <div id="includedContent1">
     <?php
     include_once ('../page_parts/top_Side[bars].php');
@@ -33,9 +37,19 @@ if($_SESSION['logged_in'] != 1){
 </div>
 
 <br><br><br><br><br><br><br><br><br>
+
+<strong class="w3-center" style="text-align: center">
+    <div class=panel-heading' style="color: #3b3b3b; bold">  <strong><h1 >User Information</h1></div></strong><hr>
+
+<h3 style="color: #676a6c"><span  >FirestName :<?php echo( $_SESSION['first_name']."<br>LastName :". $_SESSION['last_name']) ?></h3>
+<h2  style="color: #676a6c"><span class='glyphicon glyphicon-envelope one' style='width:50px;'></span> Email: <?php echo( $_SESSION['email']) ?></h2>
+</div>
+
+
+    <br><br>
 <div class="w3-border ">
     <?php
-    include  ('show_items_index.php');
+    include  ('../page_parts/Show_Items_System/show_cart.php');
     ?>
 </div>
 

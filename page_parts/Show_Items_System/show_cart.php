@@ -15,10 +15,10 @@ if ($result->num_rows > 0) {
 
     echo ("
 
-<div class='container w3-center' style='text-align: center' >
-    <div class='wrapper wrapper-content animated fadeInRight' >
-        <div class='row'>
-            <div class='col-md-9' '>
+<div class='ibox-content container w3-center' style='text-align: center;'  >
+    <div class='' >
+        <div class=''>
+            <div class=' '>
                 <div class='ibox'>
                     <div class='ibox-content'>
                         ");
@@ -88,7 +88,8 @@ if ($result->num_rows > 0) {
         </div>
     </div>
 </div> <br>
-<a href='#' class='text-muted'><i class='fa fa-trash'></i> Add item</a>
+<div class=' container w3-center'><a href='#' style='text-align: center;' class='text-center w3-center'><i class='fa fa-trash'></i> Add item</a></div>
+
 
 <br><br>
 ");

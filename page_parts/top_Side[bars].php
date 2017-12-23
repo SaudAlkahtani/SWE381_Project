@@ -57,40 +57,18 @@
             <h3 class="w3-wide w3-center"><img src="https://image.ibb.co/g7Hy5w/Diversty_Shop_Home_Page_LOGO.png" height=200pt width=150pt alt ="DiverstyShop"/></h3>
         </div>
         <div>
-            <button class="accordion " style="font-weight:bold "  >Cars</button>
-
+            <a href="../PAGES/CarTapPage.php"><button class="accordion " style="font-weight:bold "  >Cars</button></a>
             <div class= "panel" style="font-weight:bold">
-                <ul>
-                    <a href="#" class="w3-bar-item w3-button" id="toy1"><li  id="toyota">TOYOTA</li></a>
-                    <a href="#" class="w3-bar-item w3-button"><li>HYUNDAI</li></a>
-                    <a href="#" class="w3-bar-item w3-button"><li>JEEP</li></a>
-                    <a href="#" class="w3-bar-item w3-button"><li>Others</li></a>
-                </ul>
             </div>
-            <button class="accordion" style="font-weight:bold;">Animals</button>
+            <a href="../PAGES/AnimalTapPage.php"><button class="accordion" style="font-weight:bold;" >Animals</button></a>
             <div class="panel" style="font-weight:bold">
-                <ul>
-                    <a href="#" class="w3-bar-item w3-button"><li>Cats</li></a>
-                    <a href="#" class="w3-bar-item w3-button"><li>Dogs</li></a>
-                    <a href="#" class="w3-bar-item w3-button"><li>Others</li></a>
-                </ul>
             </div>
-            <button class="accordion" style="font-weight:bold">Plants</button>
+            <a href="../PAGES/PlantTapPage.php"><button class="accordion" style="font-weight:bold">Plants</button></a>
             <div class="panel" style="font-weight:bold">
-                <ul>
-                    <a href="#" class="w3-bar-item w3-button"><li>Flowers</li></a>
-                    <a href="#" class="w3-bar-item w3-button"><li>Plants</li></a>
-                    <a href="#" class="w3-bar-item w3-button"><li>Pots</li></a>
-                </ul>
             </div>
-            <button class="accordion" style="font-weight:bold">Furniture</button>
+            <a href="../PAGES/FurnitureTapPage.php"><button class="accordion" style="font-weight:bold">Furniture</button></a>
 
             <div class="panel" style="font-weight:bold">
-                <ul>
-                    <a href="#" class="w3-bar-item w3-button"><li>Couches</li></a>
-                    <a href="#" class="w3-bar-item w3-button"><li>Chairs</li></a>
-                    <a href="#" class="w3-bar-item w3-button"><li>Beds</li></a>
-                </ul>
             </div>
         </div>
 
