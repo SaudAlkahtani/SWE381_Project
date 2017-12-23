@@ -1,3 +1,12 @@
+<?php
+session_start();
+$host = 'localhost';
+$user = 'root';
+$pass = '';
+$db = 'accounts';
+$mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -59,12 +68,37 @@ if(strlen($query) >= $min_length){ // if query length is more or equal minimum l
     }
     else{ // if there is no matching rows do following
         echo "No results";
+    $TheWord = $query;
+    if($_SESSION['logged_in'] == 1){
+    $sql ='SELECT * FROM users ';
+
+    $result = $mysqli->query($sql);
+    if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+    if($_SESSION['email'] == $row['email']){
+        $sql = "UPDATE `users` SET `history` = ".$TheWord." WHERE `users`.`id`= ".$row['id'];
+        mysqli_query($mysqli, $sql);
 
     }
+    }
+    }
+}
+}
 
 }
 else{ // if query length is less than minimum
-    echo "Minimum length is ".$min_length;
+     echo "<script>
+
+to_Call_When_oked__Or_closed();
+alert('you need to enter atleast 3 digits').handler(to_Call_When_oked__Or_closed());
+function to_Call_When_oked__Or_closed(){
+    header('location: ../../PAGES/HomeDStest.php');
+    print('xcv');
+}
+</script>";
+
+
 }
 ?>
 </body>

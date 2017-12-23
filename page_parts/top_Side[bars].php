@@ -117,7 +117,7 @@
         <div class="btn-group " >
             <input style="background-color: lightgray;color: black;" type="text" name="query" class="btn .btn-default w3-lightGray " value="" placeholder = "Enter here.." >
             <input type="submit" name="" class="btn .btn-default w3-gray" value="search"></input></div>
-
+        </form>
     </div>
     <br>
     <br>
@@ -148,7 +148,7 @@
         echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px'><a href='../PAGES/cart_show_page.php'><button id='Login' type='button'  style='width: 90px;color: black;' class='btn fa fa-user' ></button></a></div>");
         if($isThereNinifcation) {
             echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px;'><a href='../PAGES/interests.php'><button id='interests' type='button' style='width: 90px;color: black;' class='btn-success' ><i class='fa fa-envelope' aria-hidden='true' '></i></button></a></div> ");
-
+            echo ("<script>alert('WE have found some thing you interest in, check the NOTIFICATION box ');</script>");
         } else {
             echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px;'><a href='../PAGES/interests.php'><button id='interests' type='button' style='width: 90px;color: black;' class='btn' ><i class='fa fa-envelope' aria-hidden='true' '></i></button></a></div>");
         }

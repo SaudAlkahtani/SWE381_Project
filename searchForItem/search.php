@@ -66,19 +66,21 @@ if(strlen($query) >= $min_length){ // if query length is more or equal minimum l
     }
     else{ // if there is no matching rows do following
         echo "No results";
+    if($_SESSION['logged_in']==1){
+    $sql ='SELECT * FROM users ';
 
-    $sql ='SELECT * FROM user ';
-
-    $result = $conn->query($sql);
+    $result = $mysqli->query($sql);
     if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
     if($_SESSION['email'] == $row['email']){
-        $row['history'] = $query;
-    }
-    }
-    }
+        $sql = "UPDATE `users` SET `history` = ".$TheWord." WHERE `users`.`id`=".$row['id'];
+        mysqli_query($mysqli, $sql);
 
+    }
+    }
+    }
+}
 }
 }
 else{ // if query length is less than minimum
