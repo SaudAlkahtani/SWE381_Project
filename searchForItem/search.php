@@ -1,3 +1,10 @@
+
+<?php
+session_start();
+require '.././page_parts/login_System/db.php';
+
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -6,7 +13,7 @@
 </head>
 <body>
 <?php
-$conn =mysqli_connect("localhost", "root", "","dsdb");
+$conn =mysqli_connect("localhost", "root", "","dbitems");
 
 /*
     localhost - it's location of the mysql server, usually localhost
@@ -16,7 +23,7 @@ $conn =mysqli_connect("localhost", "root", "","dsdb");
     if connection fails it will stop loading the page and display an error
 */
 
-mysqli_select_db($conn,"dsdb") or die(mysqli_error());
+mysqli_select_db($conn,"dbitems") or die(mysqli_error());
 /* tutorial_search is the name of database we've created */
 
 
@@ -38,7 +45,7 @@ if(strlen($query) >= $min_length){ // if query length is more or equal minimum l
     // makes sure nobody uses SQL injection
 
     $raw_results = mysqli_query($conn,"SELECT * FROM items
-            WHERE (`name` LIKE '%".$query."%') OR (`name` LIKE '%".$query."%')") or die(mysqli_error($conn));
+            WHERE (`name` LIKE '%".$query."%') OR (`id` LIKE '%".$query."%')") or die(mysqli_error($conn));
 
     // * means that it selects all fields, you can also write: `id`, `title`, `text`
     // articles is the name of our table
@@ -59,8 +66,20 @@ if(strlen($query) >= $min_length){ // if query length is more or equal minimum l
     }
     else{ // if there is no matching rows do following
         echo "No results";
+
+    $sql ='SELECT * FROM user ';
+
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+    if($_SESSION['email'] == $row['email']){
+        $row['history'] = $query;
+    }
+    }
     }
 
+}
 }
 else{ // if query length is less than minimum
     echo "Minimum length is ".$min_length;

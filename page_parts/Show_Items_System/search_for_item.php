@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-$conn =mysqli_connect("localhost", "root", "","dsdb");
+$conn =mysqli_connect("localhost", "root", "","dbitems");
 
 /*
     localhost - it's location of the mysql server, usually localhost
@@ -16,7 +16,7 @@ $conn =mysqli_connect("localhost", "root", "","dsdb");
     if connection fails it will stop loading the page and display an error
 */
 
-mysqli_select_db($conn,"dsdb") or die(mysqli_error());
+mysqli_select_db($conn,"dbitems") or die(mysqli_error());
 /* tutorial_search is the name of database we've created */
 
 
@@ -59,6 +59,7 @@ if(strlen($query) >= $min_length){ // if query length is more or equal minimum l
     }
     else{ // if there is no matching rows do following
         echo "No results";
+
     }
 
 }

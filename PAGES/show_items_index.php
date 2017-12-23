@@ -30,13 +30,13 @@
             }
             fetch_data();
             $(document).on('click', '#btn_add', function(){
-                var img = $().text();
+                var img = $('#img').image();
                 var name = $('#name').text();
                 var discription = $('#discription').text();
                 var price = $('#price').text();
-                if(name == '')
+                if(img == null)
                 {
-                    alert("Enter img");
+                    alert("no img");
                     return false;
                 }
                 if(name == '')
@@ -111,6 +111,7 @@
                 }
             });
         });
+
     </script>
 </div>
 </body>

@@ -112,11 +112,11 @@
     <!-- search and cart button and text bar-->
     <br>
     <div class="w3-right" style="float: right; margin-right: 10pt;">
-
+        <form action="../page_parts/Show_Items_System/search_for_item.php"
         <button type="button" class="btn .btn-default w3-gray" ><a href="../PAGES/cart_show_page.php"><i class="fa fa-shopping-cart w3-margin-right " ></i></a></button>
         <div class="btn-group " >
-            <input style="background-color: lightgray;color: black;" type="text" class="btn .btn-default w3-lightGray " value="" placeholder = "Enter here.." >
-            <input type="button" class="btn .btn-default w3-gray" value="GO"></input></div>
+            <input style="background-color: lightgray;color: black;" type="text" name="query" class="btn .btn-default w3-lightGray " value="" placeholder = "Enter here.." >
+            <input type="submit" name="" class="btn .btn-default w3-gray" value="search"></input></div>
 
     </div>
     <br>
@@ -130,19 +130,29 @@
 
 
     <?php
+    require '../DataBases_DS/db.php';
+    $isThereNinifcation = false;
     $loginOrNot = $_SESSION['logged_in'];
-
+    if($loginOrNot == 1) {
+        $hs = $_SESSION['history'];
+        if ($hs != NULL) {
+            $sql = "SELECT * FROM items WHERE (`name` LIKE '%" . $hs . "%')";
+            $result = mysqli_query($conn, $sql);
+            $isThereNinifcation = mysqli_num_rows($result)>0?true:false;
+        }
+    }
     if( (int)$loginOrNot != 1){
         echo ("<div class='w3-right' id='loginButtonDiv' style='padding-right:10px;padding-left: 2px' ><a href='../page_parts/login_System/index.php'><button id='Login' type='button'   style='width: 90px;color: black;' class='btn fa fa-sign-in' ></button></a></div>");
     }
     if( (int)$loginOrNot == 1) {
-        echo("<div class='w3-right' id='loginButtonDiv'  style='padding-right:10px;padding-left: 2px'><a href='../PAGES/cart_show_page.php'><button id='Login' type='button'   style='width: 90px;color: black;' class='btn fa fa-user' ></button></a></div>");
-    }
-    if((int)$loginOrNot == 1) {
-            echo("<div class='w3-right' id='loginButtonDiv'  style='padding-right:10px;padding-left: 2px'><a href='../PAGES/interests.php'><button id='Login' type='button'    style='width: 90px;color: black;' class='btn' ><i class='fa fa-envelope' aria-hidden='true' '></i></button></a></div>");
-    }
-    if((int)$loginOrNot == 1) {
-        echo ("<div  class='w3-right' style='padding-right:10px;padding-left: 2px'><a href='.././page_parts/login_System/logout.php'><button id='home' type='button'   style='width: 90px;color: black;' class='btn' >Logout</button></a></div>");
+        echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px'><a href='../PAGES/cart_show_page.php'><button id='Login' type='button'  style='width: 90px;color: black;' class='btn fa fa-user' ></button></a></div>");
+        if($isThereNinifcation) {
+            echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px;'><a href='../PAGES/interests.php'><button id='interests' type='button' style='width: 90px;color: black;' class='btn-success' ><i class='fa fa-envelope' aria-hidden='true' '></i></button></a></div> ");
+
+        } else {
+            echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px;'><a href='../PAGES/interests.php'><button id='interests' type='button' style='width: 90px;color: black;' class='btn' ><i class='fa fa-envelope' aria-hidden='true' '></i></button></a></div>");
+        }
+        echo("<div class='w3-right' style='padding-right:10px;padding-left: 2px'><a href='.././page_parts/login_System/logout.php'><button id='home' type='button'   style='width: 90px;color: black;' class='btn' >Logout</button></a></div>");
     }
     ?>
     </div>
