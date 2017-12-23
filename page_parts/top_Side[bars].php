@@ -117,7 +117,7 @@
         <div class="btn-group " >
             <input style="background-color: lightgray;color: black;" type="text" name="query" class="btn .btn-default w3-lightGray " value="" placeholder = "Enter here.." >
             <input type="submit" name="" class="btn .btn-default w3-gray" value="search"></input></div>
-
+        </form>
     </div>
     <br>
     <br>
