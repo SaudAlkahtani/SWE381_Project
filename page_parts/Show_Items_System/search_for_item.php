@@ -47,7 +47,7 @@ if(strlen($query) >= $min_length){ // if query length is more or equal minimum l
     // makes sure nobody uses SQL injection
 
     $raw_results = mysqli_query($conn,"SELECT * FROM items
-            WHERE (`name` LIKE '%".$query."%') OR (`id` LIKE '%".$query."%')") or die(mysqli_error($conn));
+            WHERE (`name` LIKE '%".$query."%') OR (`type` LIKE '%".$query."%')") or die(mysqli_error($conn));
 
     // * means that it selects all fields, you can also write: `id`, `title`, `text`
     // articles is the name of our table
@@ -57,6 +57,7 @@ if(strlen($query) >= $min_length){ // if query length is more or equal minimum l
     // or if you want to match just full word so "gogohello" is out use '% $query %' ...OR ... '$query %' ... OR ... '% $query'
 
     if(mysqli_num_rows($raw_results) > 0){ // if one or more rows are returned do following
+        echo("<br><br>");
         echo  (" <div class='container'> <div class='row'>");
         while($results = mysqli_fetch_array($raw_results)){
 
@@ -86,7 +87,10 @@ if(strlen($query) >= $min_length){ // if query length is more or equal minimum l
 
     }
     else{ // if there is no matching rows do following
-        echo "No results";
+
+       echo "<br> <br> <br>";
+
+        echo "<p style='text-align: center'> No results </p>";
         $TheWord = $query;
 
         if($_SESSION['logged_in'] == 1){

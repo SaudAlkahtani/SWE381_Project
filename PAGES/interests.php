@@ -1,4 +1,4 @@
-<?php
+s<?php
 
 
 session_start();
@@ -9,7 +9,7 @@ if($_SESSION['logged_in'] != 1){
 ?>
 <!DOCTYPE html>
 <html >
-<title>cart_show_page</title>
+<title>Interest</title>
 <head>
 
     <script src="../https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -22,6 +22,7 @@ if($_SESSION['logged_in'] != 1){
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="../Styles_files/profile_styles.css" rel="stylesheet">
+
 
 
 </head>

@@ -13,16 +13,16 @@ body {
 
 a {
   text-decoration: none;
-  color: #1ab188;
+  color: tomato;
   -webkit-transition: .5s ease;
   transition: .5s ease;
 }
 a:hover {
-  color: #179b77;
+  color: tomato;
 }
 
 .form {
-  background: rgba(19, 35, 47, 0.9); 
+  background: rgba(19, 35, 47, 0.9);
   padding: 40px;
   max-width: 600px;
   margin: 40px auto;
@@ -55,11 +55,11 @@ a:hover {
   transition: .5s ease;
 }
 .tab-group li a:hover {
-  background: #179b77;
+  background: tomato;
   color: #ffffff;
 }
 .tab-group .active a {
-  background: #1ab188;
+  background: tomato;
   color: #ffffff;
 }
 
@@ -75,38 +75,38 @@ h1 {
 }
 
 h2 {
-    text-align: center;
-    color: #1ab188;
-    font-weight: 1000;
-    margin: 0;
+  text-align: center;
+  color: tomato;
+  font-weight: 1000;
+  margin: 0;
 }
 
 span {
-    color: #1ab188;
-    font-weight: bold;
+  color: tomato;
+  font-weight: bold;
 }
 
 p {
-    text-align: center;
-    color: #ffffff;
-    margin: 0px 0px 50px 0px;
+  text-align: center;
+  color: #ffffff;
+  margin: 0px 0px 50px 0px;
 }
 
 div.info {
-    color: pink;
-    display: box;
-    text-align: center;
-    padding: 5px;
-    margin-top: -20px;
-    margin-bottom: 15px;
-    border: 1px solid red;
-    background: #66131c;
+  color: pink;
+  display: box;
+  text-align: center;
+  padding: 5px;
+  margin-top: -20px;
+  margin-bottom: 15px;
+  border: 1px solid red;
+  background: #66131c;
 }
 
 label {
   position: absolute;
   -webkit-transform: translateY(6px);
-          transform: translateY(6px);
+  transform: translateY(6px);
   left: 13px;
   color: rgba(255, 255, 255, 0.5);
   -webkit-transition: all 0.25s ease;
@@ -117,12 +117,12 @@ label {
 }
 label .req {
   margin: 2px;
-  color: #1ab188;
+  color: tomato;
 }
 
 label.active {
   -webkit-transform: translateY(50px);
-          transform: translateY(50px);
+  transform: translateY(50px);
   left: 2px;
   font-size: 14px;
 }
@@ -150,7 +150,7 @@ input, textarea {
 }
 input:focus, textarea:focus {
   outline: 0;
-  border-color: #1ab188;
+  border-color: tomato;
 }
 
 textarea {
@@ -186,14 +186,14 @@ textarea {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .1em;
-  background: #1ab188;
+  background: tomato;
   color: #ffffff;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   -webkit-appearance: none;
 }
 .button:hover, .button:focus {
-  background: #179b77;
+  background: tomato;
 }
 
 .button-block {

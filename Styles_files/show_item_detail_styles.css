@@ -42,7 +42,7 @@ body{margin-top:20px;
 }
 .prod-cat li ul li a:hover,.prod-cat li ul li a:focus, .prod-cat li ul li.active a , .prod-cat li a:hover,.prod-cat li a:focus, .prod-cat li a.active{
     background: none;
-    color: #ff7261;
+    color: tomato;
 }
 
 .pro-lab{

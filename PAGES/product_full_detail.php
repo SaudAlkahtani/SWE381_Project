@@ -4,31 +4,48 @@ require('../page_parts/Show_Items_System/db.php')
 
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
-    <!--  All snippets are MIT license http://bootdey.com/license -->
-    <!-- 
-    	The codes are free, but we require linking to our web site.
-    	Why to Link?
-    	A true story: one girl didn't set a link and had no decent date for two years, and another guy set a link and got a top ranking in Google! 
-    	Where to Put the Link?
-    	home, about, credits... or in a good page that you want
-    	THANK YOU MY FRIEND!
-    -->
-    <?php
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Product Information</title>
+        <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
+        <!--  All snippets are MIT license http://bootdey.com/license -->
+        <!--
+            The codes are free, but we require linking to our web site.
+            Why to Link?
+            A true story: one girl didn't set a link and had no decent date for two years, and another guy set a link and got a top ranking in Google!
+            Where to Put the Link?
+            home, about, credits... or in a good page that you want
+            THANK YOU MY FRIEND!
+        -->
+        <div >
+            <?php
+            include_once ('../page_parts/top_Side[bars].php');
+            ?>
+        </div>
+
+        <br><br><br>
+        <div id="includedContent3" style="height: 500px ;width: 100%">
+            <?php
+            include_once ('../page_parts/slider_show.html')
+            ?>
+
+        </div>
+        <br><br><br><br><br><br><br><br><br>
+
+
+        <?php
 
 
 
-    $sql ="SELECT * FROM items ";
-    $result = $conn->query($sql);
-    global $SellerName;
-    if ($result->num_rows > 0) {
-        // output data of each row
-        $row = $result->fetch_assoc();
-       global $SellerName;
+        $sql ="SELECT * FROM items ";
+        $result = $conn->query($sql);
+        global $SellerName;
+        if ($result->num_rows > 0) {
+            // output data of each row
+            $row = $result->fetch_assoc();
+            global $SellerName;
 
 
             while($row = $result->fetch_assoc()) {
@@ -50,15 +67,16 @@ require('../page_parts/Show_Items_System/db.php')
                     }
 
                     echo "
+<title>Product Information</title>
         <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet'>
 <div class='col-sm-12 col-md-12 col-lg-12'>
     		<!-- product -->
 			<div class='product-content product-wrap clearfix product-deatil'>
 				<div class='row'>
-						<div class='col-md-5 col-sm-12 col-xs-12 '>
-							<div class='product-image'> 
+						<div class='col-md-5 col-sm-12 col-xs-12 ' style='margin-left: : 30%' >
+							<div class='product-image' > 
 
-										<img src='data:image/jpeg;base64," . base64_encode( $row['img'] )."' height='200px' width='200px'/>
+										<img src='data:image/jpeg;base64," . base64_encode( $row['img'] )."' height='200px' width='200px' style='margin-left: : 30%' />
 
 							</div>
 						</div>
@@ -67,57 +85,42 @@ require('../page_parts/Show_Items_System/db.php')
 						<h2 class='name'>
 							".$row['name']."
  							<br>
-                            <br>
+ 							<br>
 							<small>Product by ".$SellerName."</small>
 
 						</h2>
-						<br><hr>
+						
+						<hr>
 						<h3 class='price-container'>
-							".$row['price']."
+						Price:
+							$".$row['price']."
 							<!--<small>*includes tax</small>-->
 						</h3>
+						<br><br>
+						<h3>Description</h3>
 						<div class='certified'>
-							<!--<ul>-->
-								<!--<li><a href='javascript:void(0);'>Delivery time<span>7 Working Days</span></a></li>-->
-								<!--<li><a href='javascript:void(0);'>Certified<span>Quality Assured</span></a></li>-->
-							<!--</ul>-->
 						
-						
-						<!--</div>>
-						<div class='description description-tabs'>
-							<ul id='myTab' class='nav nav-pills'>
-								<li class='active'><a href='#more-information' data-toggle='tab' class='no-margin'>Product Description </a></li>
-								<!--<li class=''><a href='#specifications' data-toggle='tab'>Specifications</a></li>-->
-								<!--<li class=''><a href='#reviews' data-toggle='tab'>Reviews</a></li>-->
-							<!--</ul>
-							<!--<div id='myTabContent' class='tab-content'>
-							<!--	<div class='tab-pane fade active in' id='more-information'>
-								<!--	<br>
-
-								<!--	<p>".$row['description']."</p>
-								<!--</div>
+							".$row['description']."
+							
 								
-
-						</div>-->
+                            
+						</div>
 						<?php
 						?>
 						
 						
-						<br><hr>";
-                        if($_SESSION['logged_in']==1){
-                            echo "<p><h3>Description: </h3>".$row['description']."</p>
-                                  <br><hr><h3> Contact Seller: </h3> <p>".$row['seller']."</p>";
-                        }else{
-                            echo "<p>You have to be logged in to see description and Contact!</p>";
-                        }
-                        echo "
-						<!--<div class='row'>
-							<div class='col-sm-12 col-md-6 col-lg-6'>
-									<a href='javascript:void(0);' class='btn btn-success btn-lg'>Contact Seller</a>
-							</div>
-							<div class='col-sm-12 col-md-6 col-lg-6'>
+						<br><hr>
+						<h3>Contact info</h3>
+						";
 
-							</div>-->
+                    if($_SESSION['logged_in']==1){
+                        echo "
+                                  <p>".$row['seller']."</p>";
+                    }else{
+                        echo "<p style='color:red'>You have to be logged in to see contact information!</p>";
+                    }
+                    echo "
+						<br><br>
 							
 						</div>
 					</div>
@@ -136,18 +139,25 @@ require('../page_parts/Show_Items_System/db.php')
                 }
             }
 
-}
-    ?>
-    <title>Product Information</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../Styles_files/show_item_detail_styles.css" rel="stylesheet" type="text/css"/>
-</head>
-<body>
-
-</body>
-</html>
+        }
+        ?>
+        <title>Product Information</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../Styles_files/show_item_detail_styles.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+    <div id="includedContent2">
+        <?php
+        include_once ('../page_parts/footer.html');
+        ?>
+    </div>
+    </body>
+    </html>
 
 <?php
+
+
+
 $conn->close();

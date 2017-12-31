@@ -6,7 +6,7 @@ if($_SESSION['logged_in'] != 1){
     ?>
 <!DOCTYPE html>
 <html >
-<title>cart_show_page</title>
+<title>Profile page</title>
 <head>
 
     <script src="../https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -20,7 +20,6 @@ if($_SESSION['logged_in'] != 1){
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="../Styles_files/profile_styles.css" rel="stylesheet">
 
-
 </head>
 
 
@@ -33,6 +32,14 @@ if($_SESSION['logged_in'] != 1){
 </div>
 
 <br><br><br><br><br><br><br><br><br>
+<strong class="w3-center" style="text-align: center">
+    <div class=panel-heading' style="color: #3b3b3b; bold">  <strong><h1 >User Information</h1></div></strong><hr>
+
+<h3 style="color: #676a6c"><span  >First Name :<?php echo( $_SESSION['first_name']."<br>Last Name :". $_SESSION['last_name']) ?></h3>
+<h2  style="color: #676a6c"><span class='glyphicon glyphicon-envelope one' style='width:50px;'></span> Email: <?php echo( $_SESSION['email']) ?></h2>
+</div>
+
+<br><br>
 <div class="w3-border ">
     <?php
     include  ('../page_parts/Show_Items_System/showUserItems.php');

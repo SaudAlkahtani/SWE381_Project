@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
                                         </td>
                                         <td class='desc'>
                                             <h3>
-                                                <a href='#' class='text-navy'>
+                                                <a href='../../swe381Project/PAGES/product_full_detail.php?id=".$row['id']."' class='text-navy'>
                                                     " . $row['name'] . "
                                                 </a>
                                             </h3>
@@ -89,7 +89,10 @@ if ($result->num_rows > 0) {
         </div>
     </div>
 </div> <br>
- <a href='../../../swe381Project/page_parts/sellItem/sell.php ' class='text-muted'><i class='fa fa-trash'></i> Add item</a>
+<br>
+<div class=' container w3-center'><a href='../../../swe381Project/page_parts/sellItem/sell.php ' style='text-align: center;' class='text-center w3-center'><i class='fa fa-trash'></i> Add item</a></div>
+
+
 <br><br>
 ");
 
